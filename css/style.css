@@ -1,5 +1,5 @@
 /* ===============================
-   RESET GLOBAL
+   1. RESET GLOBAL
 ================================= */
 * {
     margin: 0;
@@ -9,13 +9,13 @@
 
 body {
     background-color: #FFFFFF;
-    background-image: url('../assets/imagens/fundo-pagina.svg'); 
-    background-repeat: repeat; 
+    background-image: url('../assets/imagens/fundo-pagina.svg');
+    background-repeat: repeat;
     overflow-x: hidden;
 }
 
 /* ===============================
-   ESTRUTURA DO HEADER
+   2. HEADER E NAVEGAÇÃO
 ================================= */
 header {
     position: absolute;
@@ -40,9 +40,6 @@ nav {
     height: 33px;
 }
 
-/* ===============================
-   LINKS DE NAVEGAÇÃO E ANIMAÇÃO
-================================= */
 .nav-links {
     list-style: none;
     display: flex;
@@ -59,7 +56,6 @@ nav {
     text-decoration: none;
     color: #FFFFFF;
     font-size: 15px;
-    padding-bottom: 8px;
     position: relative;
     transition: color 0.3s ease;
 }
@@ -67,24 +63,21 @@ nav {
 .nav-links li a::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    top: 45px;
     left: 0;
     width: 100%;
-    height: 3px;
-    background-color: #53BD7F; 
-    transform: scaleX(0); 
-    transform-origin: center; 
-    transition: transform 0.3s ease; 
+    height: 4px;
+    background-color: #53BD7F;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
 }
 
 .nav-links li a:hover::after,
 .nav-links li a.active::after {
-    transform: scaleX(1); 
+    transform: scaleX(1);
 }
 
-/* ===============================
-   BOTÃO DE MENU (HAMBÚRGUER)
-================================= */
 .menu-hamburguer {
     display: flex;
     flex-direction: column;
@@ -120,13 +113,14 @@ nav {
 }
 
 /* ===============================
-   SEÇÃO HOME HERO
+   3. SEÇÃO: HOME HERO
 ================================= */
 .home-hero {
     position: relative;
+    width: 100%;
     aspect-ratio: 1440 / 800;
     overflow: hidden;
-    background: url('../assets/imagens/home-fundo.svg') no-repeat center center;
+    background: url('../assets/imagens/home-fundo.svg') no-repeat center bottom;
     background-size: cover;
 }
 
@@ -149,9 +143,11 @@ nav {
 .hero-descricao {
     color: #FFFFFF;
     font-size: 36px;
+    line-height: 43px;
+    max-width: 636px;
     margin-top: 26px;
-    margin-left: 10px;
-    margin-bottom: 37px;
+    margin-left: 0px;
+    margin-bottom: 26px;
 }
 
 .scroll-down-link {
@@ -160,7 +156,7 @@ nav {
     color: #FFFFFF;
     text-decoration: none;
     font-size: 16px;
-    margin-left: 11px;
+    margin-left: 0px;
     transition: opacity 0.3s ease, color 0.3s ease;
     gap: 11px;
 }
@@ -170,10 +166,10 @@ nav {
 }
 
 /* ===============================
-   SEÇÃO: IMPACTOS AMBIENTAIS
+   4. SEÇÃO: IMPACTOS AMBIENTAIS
 ================================= */
 .secao-impactos {
-    padding: 100px 20px; 
+    padding: 117px 20px 120px 20px;
     position: relative;
     width: 100%;
     display: flex;
@@ -201,7 +197,7 @@ nav {
     font-size: 36px;
     line-height: 55px;
     text-transform: uppercase;
-    margin-bottom: -5px;
+    margin-bottom: 12px;
     z-index: 2;
 }
 
@@ -218,6 +214,7 @@ nav {
 }
 
 .impactos-cards-container {
+    margin-top: 39px;
     display: flex;
     justify-content: center;
     gap: 30px;
@@ -232,22 +229,22 @@ nav {
     min-height: 248px;
     border-radius: 10px;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.07);
-    padding: 0 40px; 
-    display: flex;
-    align-items: center;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: max-content 1fr;
     gap: 30px;
+    align-content: center;
+    align-items: start;
 }
 
-.card-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.impacto-card:nth-child(1) .card-icon img {
+    width: 43.3px;
+    height: 47px;
 }
 
-.card-icon img {
-    width: 63px;
-    height: auto;
-    flex-shrink: 0;
+.impacto-card:nth-child(2) .card-icon img {
+    width: 63.02px;
+    height: 60.38px;
 }
 
 .card-texto {
@@ -261,31 +258,625 @@ nav {
 }
 
 /* ===============================
-   RESPONSIVIDADE (MOBILE E TABLET)
+   5. SEÇÃO: TRATAMENTO DE ÁGUA
 ================================= */
-@media (max-width: 980px) {
+.secao-tratamento {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1398 / 900;
+    background-image: url('../assets/imagens/tratamento/fundo-tratamento.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tratamento-container {
+    width: 100%;
+    max-width: 1035px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+.tratamento-header {
+    text-align: left;
+    margin-left: 50px;
+    margin-bottom: -45px;
+    z-index: 2;
+}
+
+.subtitulo-sistema {
+    color: #FFFFFF;
+    font-size: 36px;
+    padding-bottom: 20px;
+}
+
+.titulo-inline img {
+    max-width: 100%;
+    height: auto;
+}
+
+.tratamento-conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 66px;
+    width: 100%;
+}
+
+.bloco-circulo {
+    position: relative;
+    width: 345px;
+    height: 345px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.bg-circulo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.texto-circulo {
+    position: relative;
+    z-index: 2;
+    color: #FFFFFF;
+    text-align: right;
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.bloco-texto {
+    max-width: 480px;
+}
+
+.bloco-texto p {
+    margin-top: 39px;
+    color: #FFFFFF;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+.triangulos-base {
+    position: absolute;
+    bottom: -127px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.triangulos-base img {
+    width: 130px;
+    height: auto;
+}
+
+/* ===============================
+   6. MODAIS E FLUTUANTES 
+================================= */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.25);
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.menu-lateral {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 286px;
+    height: 100vh;
+    background-color: rgba(0, 120, 62, 0.95);
+    backdrop-filter: blur(4px);
+    z-index: 1002;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    padding: 40px 0 0 50px;
+}
+
+.menu-overlay.ativo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-lateral.ativo {
+    transform: translateX(0);
+}
+
+.fechar-menu {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.fechar-menu:hover {
+    transform: scale(1.1);
+}
+
+.nav-links-mobile {
+    list-style: none;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.nav-links-mobile li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s ease;
+    display: inline-block;
+}
+
+.nav-links-mobile li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 100%;
+    height: 4px;
+    background-color: #53BD7F;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.3s ease;
+}
+
+.nav-links-mobile li a:hover::after,
+.nav-links-mobile li a.active::after {
+    transform: scaleX(1);
+}
+
+.chat-flutuante {
+    color: #66C223;
+    position: fixed;
+    width: 65px;
+    height: 65px;
+    right: 95px;
+    bottom: 50px;
+    z-index: 990;
+}
+
+.chat-flutuante:hover {
+    color: #72DB26;
+}
+
+.chat-modal {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 350px;
+    height: 450px;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.15);
+    z-index: 990;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.chat-modal.ativo {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.mensagem-wrapper {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.foto-perfil {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.chat-flutuante.oculto {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.chat-header {
+    background-color: #00783E;
+    color: #FFFFFF;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header h3 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.fechar-chat {
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.fechar-chat:hover {
+    transform: scale(1.1);
+}
+
+.chat-body {
+    flex: 1;
+    background-color: #F8F9FA;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.mensagem-recebida {
+    background-color: #E2E8E4;
+    color: #333333;
+    padding: 12px 16px;
+    border-radius: 15px 15px 15px 0;
+    font-size: 14px;
+    line-height: 20px;
+    max-width: 85%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.chat-footer {
+    padding: 15px;
+    background-color: #FFFFFF;
+    border-top: 1px solid #EEEEEE;
+    display: flex;
+    gap: 10px;
+}
+
+.chat-footer input {
+    flex: 1;
+    border: 1px solid #DDDDDD;
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.btn-enviar-chat {
+    color: #FFFFFF;
+    background-color: #00783E;
+    border: none;
+    border-radius: 20px;
+    width: 80px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-enviar-chat:hover {
+    background-color: #72DB26;
+}
+
+/* ===============================
+   7. SEÇÃO: FONTE RENOVÁVEL E FIOS
+================================= */
+.secao-renovavel {
+    width: 100%;
+    margin-top: -50px;
+    background-color: #FFFFFF;
+}
+
+.titulo-ekko {
+    font-size: 48px;
+    line-height: 55px;
+    color: #00783E;
+    margin-bottom: 26px;
+}
+
+.subtitulo-composto {
+    font-size: 24px;
+    line-height: 28px;
+    color: #00783E;
+    margin-bottom: 26px;
+    text-transform: uppercase;
+}
+
+.subtitulo-composto .cor-destaque {
+    color: #00783E;
+    text-transform: none;
+}
+
+.descricao-renovavel {
+    font-size: 18px;
+    line-height: 28px;
+    color: #5A5A5A;
+}
+
+.img-composicao {
+    width: 100%;
+    max-width: 500px; /* Ajuste para não ficar estourada */
+    height: auto;
+}
+
+/* --- Ajustes da Coluna de Fios --- */
+/* --- Ajustes da Coluna de Fios --- */
+.fios-imagem-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Força o alinhamento à esquerda, acompanhando o container de cima */
+    width: 100%;
+}
+
+.fios-bloco-circulo {
+    position: relative;
+    margin-left: 20px;
+    width: 380px;
+    height: 380px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3; /* O círculo agora fica NA FRENTE */
+}
+
+.fios-texto-circulo {
+    position: relative;
+    width: 230px;
+    z-index: 4;
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.fios-img {
+    position: relative;
+    z-index: 1; /* A bobina agora fica ATRÁS do círculo */
+
+    margin-top: -50px; /* Puxa a bobina para CIMA, deslizando para debaixo do círculo */
+    margin-left: -60px; /* Puxa para a ESQUERDA, compensando a área transparente da imagem original */
+}
+
+.fios-titulo {
+    color: #00783E;
+    font-size: 24px;
+    line-height: 33px;
+    margin-bottom: 40px;
+}
+
+.fios-lista-produtos {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.fios-lista-produtos li {
+    border-bottom: 1px solid #E0E0E0;
+    transition: border-color 0.3s ease;
+}
+
+.fios-lista-produtos li:hover {
+    border-bottom-color: #64ABFF;
+}
+
+.fios-lista-produtos li a {
+    display: flex;
+    align-items: center;
+    line-height: 61px;
+    color: #268AFF;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.fios-lista-produtos li a span {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+/* ===============================
+   8. RESPONSIVIDADE (MOBILE)
+================================= */
+@media (max-width: 990px) {
+    /* O Bootstrap já quebra as colunas, aqui fazemos apenas ajustes finos de centralização */
+    .fios-titulo {
+        text-align: center;
+    }
+    .img-composicao {
+        margin: 0 auto;
+    }
+}
+
+/* ===============================
+   9. FOOTER 
+================================= */
+.footer-principal {
+    width: 100%;
+    min-height: 200px;
+    background-image: url('../assets/imagens/fundo-footer.svg');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100% auto;
+    padding: 100px 0 40px 0;
+    margin-top: -80px;
+    position: relative;
+    z-index: 10;
+}
+
+.footer-container {
+    max-width: 1210px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.footer-social-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin-bottom: 50px;
+}
+
+.footer-social-wrapper img {
+    width: 20px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.footer-social-wrapper a:hover img {
+    transform: translateY(-3px);
+}
+
+.footer-divider {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-bottom: 30px;
+}
+
+.footer-bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.footer-copyright {
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-oxigen {
+    height: 15px;
+}
+
+.footer-nav {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 30px;
+}
+
+.footer-links a,
+.btn-voltar {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-links a span,
+.btn-voltar span {
+    font-size: 12px;
+}
+
+.btn-voltar {
+    font-weight: 500;
+}
+
+/* ===============================
+   10. RESPONSIVIDADE (MEDIA QUERIES GERAIS)
+================================= */
+@media (max-width: 1170px) {
+    .hero-content {
+        margin-left: 80px;
+    }
+
+    .hero-logo-gigante img {
+        width: 400px;
+    }
+
+    .hero-descricao {
+        font-size: 32px;
+        max-width: 560px;
+    }
+}
+
+@media (max-width: 990px) {
     .nav-links {
         display: none;
     }
+
     header {
-        padding: 20px;
+        padding: 30px 40px;
+    }
+
+    .home-hero {
+        min-height: 700px;
+        background-position: 65% center;
+    }
+
+    .hero-content {
+        margin-left: 60px;
+    }
+
+    .hero-logo-gigante img {
+        width: 350px;
+    }
+
+    .hero-descricao {
+        font-size: 28px;
+        line-height: 38px;
+        max-width: 480px;
     }
 }
 
 @media (max-width: 768px) {
     .home-hero {
-        aspect-ratio: auto; 
-        min-height: 100vh; 
-        background-position: center bottom; 
+        min-height: 650px;
+        background-position: 70% bottom;
     }
 
     .hero-content {
-        margin-left: 20px;
-        margin-top: 150px;
+        margin-left: 40px;
+    }
+
+    .hero-logo-gigante img {
+        width: 300px;
     }
 
     .hero-descricao {
         font-size: 24px;
+        line-height: 34px;
+        max-width: 400px;
     }
 
     .titulo-reducao {
@@ -296,7 +887,34 @@ nav {
     .impacto-card {
         padding: 30px 20px;
         flex-direction: column;
-        text-align: center;
         gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 20px;
+    }
+
+    .home-hero {
+        min-height: 100vh;
+        background-position: 75% bottom;
+    }
+
+    .hero-content {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .hero-logo-gigante img {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .hero-descricao {
+        font-size: 20px;
+        line-height: 28px;
+        margin-top: 20px;
+        margin-bottom: 25px;
     }
 }

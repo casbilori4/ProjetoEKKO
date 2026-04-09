@@ -1,9 +1,13 @@
+/* O import deve ser a PRIMEIRA linha do arquivo CSS */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
 .montserrat-regular {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 }
+
 .montserrat-semibold {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
@@ -18,5 +22,41 @@
   font-style: normal;
 }
 
+.montserrat-bold-inline {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-size: 64px;
+  font-style: normal;
+  color: transparent;
+  -webkit-text-stroke: 2px black;
+}
 
+.montserrat-medium {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
 
+.montserrat-black {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.ubuntu-light {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+}
+
+.ubuntu-regular {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+}
+
+.ubuntu-medium {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+}

@@ -8,10 +8,11 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/fonts.css">
-
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -35,71 +36,290 @@
         </nav>
     </header>
 
-    <section class="home-hero">
-        <div class="hero-content">
-            <div class="hero-logo-gigante">
-                <img src="assets/logoEKKO.svg" alt="Logo do Projeto EKKO Grande">
-            </div>
-
-            <p class="hero-descricao montserrat-bold">
-                Respeitar o meio ambiente e <br>
-                criar alternativas sustentáveis <br>
-                para nosso processo de produção
-            </p>
-
-            <a href="#impactos-ambientais" class="scroll-down-link">
-                <div class="scroll-icon">
-                    <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M16 19L21 23L26 19" stroke="currentColor" stroke-width="2" />
-                        <circle cx="21" cy="21" r="20" stroke="currentColor" stroke-width="2" />
-                    </svg>
+    <main>
+        <section class="home-hero">
+            <div class="hero-content">
+                <div class="hero-logo-gigante">
+                    <img src="assets/logoEKKO.svg" alt="Logo do Projeto EKKO Grande">
                 </div>
-                <p class="montserrat-semibold"> DESCER PÁGINA </p>
-            </a>
-        </div>
-    </section>
 
-    <section id="impactos-ambientais" class="secao-impactos">
-        <div class="container-impactos">
+                <p class="hero-descricao montserrat-bold">
+                    Respeitar o meio ambiente e <br>
+                    criar alternativas sustentáveis <br>
+                    para nosso processo de produção
+                </p>
 
-            <div class="impactos-header">
-                <p class="montserrat-regular titulo-reducao">REDUÇÃO DOS</p>
-                <div class="texto-inline">
-                    <img src="assets/imagens/impactos/texto-inline.svg" alt="Impactos Ambientais">
-                </div>
-            </div>
-
-            <div class="impactos-cards-container">
-                <div class="impacto-card">
-                    <div class="card-icon">
-                        <img src="assets/imagens/impactos/icon1.svg" alt="Ícone de folhas">
+                <a href="#impactos-ambientais" class="scroll-down-link">
+                    <div class="scroll-icon">
+                        <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 19L21 23L26 19" stroke="currentColor" stroke-width="2" />
+                            <circle cx="21" cy="21" r="20" stroke="currentColor" stroke-width="2" />
+                        </svg>
                     </div>
-                    <div class="card-texto">
+                    <p class="montserrat-semibold"> DESCER PÁGINA </p>
+                </a>
+            </div>
+        </section>
+
+        <section id="impactos-ambientais" class="secao-impactos">
+            <div class="container-impactos">
+
+                <div class="impactos-header">
+                    <p class="montserrat-regular titulo-reducao">REDUÇÃO DOS</p>
+                    <div class="texto-inline">
+                        <img src="assets/imagens/impactos/texto-inline.svg" alt="">
+                    </div>
+                </div>
+
+                <div class="impactos-cards-container">
+                    <div class="impacto-card">
+                        <div class="card-icon">
+                            <img src="assets/imagens/impactos/icon1.svg" alt="Ícone de folhas">
+                        </div>
+                        <div class="card-texto">
+                            <p class="montserrat-regular">
+                                Ciente do papel que exerce sobre a indústria do plástico, na sociedade e no meio
+                                ambiente a EKKO busca adotar ações que contribuam para a redução dos impactos
+                                ambientais.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="impacto-card">
+                        <div class="card-icon">
+                            <img src="assets/imagens/impactos/icon2.svg" alt="Ícone de reciclagem">
+                        </div>
+                        <div class="card-texto">
+                            <p class="montserrat-regular">
+                                Mais que uma filosofia, respeitar o meio ambiente, criar alternativas sustentáveis para
+                                nosso processo produtivo e conscientizar nossos colaboradores são metas para a EKKO.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="tratamento-agua" class="secao-tratamento">
+            <div class="tratamento-container">
+                <div class="tratamento-header">
+                    <p class="montserrat-regular subtitulo-sistema">SISTEMA DE</p>
+                    <div class="titulo-inline">
+                        <img src="assets/imagens/tratamento/tratamento-inline.svg" alt="">
+                    </div>
+                </div>
+
+                <div class="tratamento-conteudo">
+                    <div class="bloco-circulo">
+                        <img src="assets/imagens/tratamento/circulo.svg" alt="" class="bg-circulo">
+                        <p class="texto-circulo montserrat-medium">
+                            A EKKO possui seu próprio<br>
+                            sistema de tratamento de<br>
+                            água com <span class="montserrat-black">foco no<br>processo produtivo.</span>
+                        </p>
+                    </div>
+
+                    <div class="bloco-texto">
                         <p class="montserrat-regular">
-                            Ciente do papel que exerce sobre a indústria do plástico, na sociedade e no meio
-                            ambiente a EKKO busca adotar ações que contribuam para a redução dos impactos
-                            ambientais.
+                            Os equipamentos utilizados na fabricação de compostos utilizam água em vários de seus
+                            processos
+                            como: extrusão, resfriamento e limpeza dos silos. A água utilizada para estas etapas,
+                            retorna ao
+                            centro de tratamento com excelente qualidade, para ser reutilizada na fábrica nos processos
+                            produtivos. Estas medidas foram adotadas com o intuito de reduzir os impactos ambientais e
+                            preservação dos recursos naturais.
                         </p>
                     </div>
                 </div>
+            </div>
 
-                <div class="impacto-card">
-                    <div class="card-icon">
-                        <img src="assets/imagens/impactos/icon2.svg" alt="Ícone de reciclagem">
-                    </div>
-                    <div class="card-texto">
-                        <p class="montserrat-regular">
-                            Mais que uma filosofia, respeitar o meio ambiente, criar alternativas sustentáveis para
-                            nosso processo produtivo e conscientizar nossos colaboradores são metas para a EKKO.
-                        </p>
-                    </div>
+            <div class="triangulos-base">
+                <img src="assets/imagens/tratamento/triangulos.svg" alt="">
+            </div>
+        </section>
+
+<section id="fonte-renovavel" class="secao-renovavel py-5">
+    
+    <div class="container mb-5">
+        <div class="row align-items-center">
+            
+            <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
+                <div class="renovavel-texto">
+                    <h2 class="montserrat-black titulo-ekko">EKKO®EKKO</h2>
+                    <h3 class="montserrat-medium subtitulo-composto">
+                        COMPOSTO DE POLIETILENO “EKKO”<br>
+                        <span class="cor-destaque">Fonte Renovável</span>
+                    </h3>
+                    <p class="montserrat-regular descricao-renovavel">
+                        Focado em sustentabilidade e química renovável, os compostos poliolefínicos denominados “EKKO”,
+                        são obtidos a partir do etanol da cana de açúcar. Além de serem de origem renovável, eles são
+                        100% recicláveis e não contribuem para o aumento do aquecimento global.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12 text-center text-lg-end">
+                <div class="renovavel-imagem">
+                    <img src="assets/renovavel.svg" alt="Composição Cana de Açúcar e Reciclagem" class="img-fluid img-composicao">
                 </div>
             </div>
 
         </div>
-    </section>
+    </div>
 
-    <script src="js/script.js"></script>
+    <div id="produtos-fios" class="container mt-5 pt-4">
+        <div class="row align-items-center">
+
+            <div class="col-lg-6 col-md-12 mb-5 mb-lg-0 d-flex justify-content-center position-relative">
+                <div class="fios-imagem-container">
+                    <div class="bloco-circulo fios-bloco-circulo">
+                        <img src="assets/imagens/tratamento/circulo.svg" alt="" class="bg-circulo">
+                        <p class="texto-circulo fios-texto-circulo montserrat-regular">
+                            Focado na <span class="montserrat-bold">fabricação de fios e cabos</span>, a sua
+                            constituição é exatamente igual ao polietileno comum, garantindo assim todas as propriedades
+                            físicas e químicas do plástico convencional de origem fóssil.
+                        </p>
+                    </div>
+                    <img src="assets/imagens/fios.svg" alt="Bobina de fios e cabos vermelhos" class="img-fluid fios-img">
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12">
+                <div class="fios-lista-container ms-lg-4">
+                    <h3 class="montserrat-medium fios-titulo">
+                        CAMINHANDO JUNTO COM ESTE AVANÇO TECNOLÓGICO A EKKO DISPÕE DOS SEGUINTES PRODUTOS:
+                    </h3>
+                    <ul class="fios-lista-produtos montserrat-medium ps-0">
+                        <li><a href="#"><span><img src="assets/item-azul.svg" alt="Seta" class="me-2"></span> ekkotox® Natural ekko</a></li>
+                        <li><a href="#"><span><img src="assets/item-azul.svg" alt="Seta" class="me-2"></span> ekkotox® Preto ekko</a></li>
+                        <li><a href="#"><span><img src="assets/item-azul.svg" alt="Seta" class="me-2"></span> ekkopex® ekko XLPE</a></li>
+                        <li><a href="#"><span><img src="assets/item-azul.svg" alt="Seta" class="me-2"></span> ekko PEBDL Preto ekko FC</a></li>
+                        <li><a href="#"><span><img src="assets/item-azul.svg" alt="Seta" class="me-2"></span> ekko PEAD Natural ekko FC</a></li>
+                        <li><a href="#"><span><img src="assets/item-azul.svg" alt="Seta" class="me-2"></span> ekko PEAD Preto ekko FC</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+    </main>
+
+    <div class="menu-overlay"></div>
+    <aside class="menu-lateral">
+        <div class="fechar-menu">
+            <img src="assets/botao-fechar.svg" alt="Ícone de fechar menu">
+        </div>
+
+        <ul class="nav-links-mobile montserrat-semibold">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">EMPRESA</a></li>
+            <li><a href="#">PRODUTOS</a></li>
+            <li><a href="#">SEGMENTOS</a></li>
+            <li><a href="#">CONTATO</a></li>
+        </ul>
+    </aside>
+
+    <a href="#" class="chat-flutuante" id="btnAbrirChat">
+        <svg width="165" height="165" viewBox="0 0 165 165" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <foreignObject x="0" y="0" width="165" height="165">
+                <div xmlns="http://www.w3.org/1999/xhtml"
+                    style="backdrop-filter:blur(7.5px);clip-path:url(#bgblur_0_1_1754_clip_path);height:100%;width:100%">
+                </div>
+            </foreignObject>
+            <g filter="url(#filter0_d_1_1754)" data-figma-bg-blur-radius="15">
+                <rect x="50" y="20" width="65" height="65" rx="32.5" fill="currentColor" />
+            </g>
+            <path d="M76 67.125V62.25H81.6875L76 67.125Z" fill="white" />
+            <rect x="70.3125" y="42.75" width="24.375" height="19.5" rx="3" fill="white" />
+            <defs>
+                <filter id="filter0_d_1_1754" x="0" y="0" width="165" height="165" filterUnits="userSpaceOnUse"
+                    color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                        result="hardAlpha" />
+                    <feOffset dy="30" />
+                    <feGaussianBlur stdDeviation="25" />
+                    <feComposite in2="hardAlpha" operator="out" />
+                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_1754" />
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_1754" result="shape" />
+                </filter>
+                <clipPath id="bgblur_0_1_1754_clip_path" transform="translate(0 0)">
+                    <rect x="50" y="20" width="65" height="65" rx="32.5" />
+                </clipPath>
+            </defs>
+        </svg>
+    </a>
+
+    <div class="chat-modal" id="modalChat">
+        <div class="chat-header">
+            <h3 class="montserrat-semibold">Fale Conosco</h3>
+            <button class="fechar-chat" id="btnFecharChat">
+                <img src="assets/botao-fechar.svg" alt="Ícone de fechar CHAT">
+            </button>
+        </div>
+
+        <div class="chat-body">
+            <div class="mensagem-wrapper">
+                <img src="assets/foto-perfil.svg" alt="Atendente EKKO" class="foto-perfil">
+
+                <div class="mensagem-recebida montserrat-regular">
+                    Olá! 👋 Como podemos ajudar você hoje?
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-footer">
+            <input type="text" placeholder="Escreva sua mensagem..." class="montserrat-regular">
+            <button class="btn-enviar-chat">
+                <p class="montserrat-bold">Enviar</p>
+            </button>
+        </div>
+    </div>
+
+    <footer class="footer-principal">
+        <div class="footer-container">
+
+            <div class="footer-social-wrapper">
+                <a href="#"><img src="assets/facebook.svg" alt="Facebook"></a>
+                <a href="#"><img src="assets/instagram.svg" alt="Instagram"></a>
+                <a href="#"><img src="assets/youtube.svg" alt="YouTube"></a>
+                <a href="#"><img src="assets/linkedin.svg" alt="LinkedIn"></a>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom-row">
+
+                <div class="footer-copyright ubuntu-regular">
+                    Todos os direitos reservados © 2024 ekko Plásticos | Criação de sites
+                    <img src="assets/oxigenweb.svg" alt="Oxigenweb" class="logo-oxigen">
+                </div>
+
+                <div class="footer-nav">
+                    <div class="footer-links ubuntu-light">
+                        <a href="#"><span><img src="assets/item-branco.svg" alt=""></span> Política de privacidade</a>
+                        <a href="#"><span><img src="assets/item-branco.svg" alt=""></span> Política de cookies</a>
+                    </div>
+
+                    <a href="#" class="btn-voltar ubuntu-medium">
+                        <span"><svg width="7" height="12" viewBox="0 0 7 12" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.780762 10.6248L4.78076 5.62476L0.780761 0.624756" stroke="white"
+                                    stroke-width="2" />
+                            </svg>
+                        </span> Voltar ao site
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="script/script.js"></script>
 </body>
 
 </html>
