@@ -7,15 +7,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     navLinks.forEach(link => {
         link.addEventListener('click', function (e) {
-            // Impede que o link '#' faça a página dar o "pulo" para o topo
             if (this.getAttribute('href') === "#") {
                 e.preventDefault();
             }
-
-            // Remove a classe 'active' de todos os links
             navLinks.forEach(item => item.classList.remove('active'));
-
-            // Adiciona a classe 'active' apenas no link clicado
             this.classList.add('active');
         });
     });
@@ -32,14 +27,14 @@ document.addEventListener("DOMContentLoaded", function () {
         btnAbrirMenu.addEventListener('click', function () {
             menuLateral.classList.add('ativo');
             menuOverlay.classList.add('ativo');
-            document.body.style.overflow = 'hidden'; // Trava o scroll do fundo
+            document.body.style.overflow = 'hidden'; 
         });
     }
 
     const fecharMenu = function () {
         menuLateral.classList.remove('ativo');
         menuOverlay.classList.remove('ativo');
-        document.body.style.overflow = ''; // Libera o scroll
+        document.body.style.overflow = ''; 
     };
 
     if (btnFecharMenu) {
@@ -58,15 +53,51 @@ document.addEventListener("DOMContentLoaded", function () {
     const modalChat = document.getElementById('modalChat');
 
     if (btnAbrirChat && modalChat && btnFecharChat) {
-        // Abre ou fecha o chat no clique do botão flutuante
         btnAbrirChat.addEventListener('click', function (e) {
             e.preventDefault();
             modalChat.classList.toggle('ativo');
         });
 
-        // Fecha o chat no ícone de fechar (X)
         btnFecharChat.addEventListener('click', function () {
             modalChat.classList.remove('ativo');
         });
     }
+
+    // ===============================
+    // LÓGICA DO CARROSSEL DE PRODUTOS
+    // ===============================
+    if (document.querySelector('.swiper-produtos')) {
+        const swiper = new Swiper('.swiper-produtos', {
+            slidesPerView: 'auto', 
+            spaceBetween: 36,      
+            navigation: {
+                nextEl: '.swiper-btn-next',
+                prevEl: '.swiper-btn-prev',
+            },
+            breakpoints: {
+                320: {
+                    spaceBetween: 20
+                },
+                768: {
+                    spaceBetween: 30
+                },
+                1200: {
+                    spaceBetween: 36
+                }
+            }
+        });
+    }
+
+    // ===============================
+    // LÓGICA DOS BOTÕES TOGGLE
+    // ===============================
+    const botoesToggle = document.querySelectorAll('.btn-toggle');
+    
+    botoesToggle.forEach(btn => {
+        btn.addEventListener('click', function() {
+            botoesToggle.forEach(b => b.classList.remove('ativo'));
+            this.classList.add('ativo');
+        });
+    });
+
 });

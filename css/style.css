@@ -9,7 +9,7 @@
 
 body {
     background-color: #FFFFFF;
-    background-image: url('../assets/imagens/fundo-pagina.svg');
+    background-image: url('../assets/backgrounds/global/fundo-pagina.svg');
     background-repeat: repeat;
     overflow-x: hidden;
 }
@@ -120,7 +120,7 @@ nav {
     width: 100%;
     aspect-ratio: 1440 / 800;
     overflow: hidden;
-    background: url('../assets/imagens/home-fundo.svg') no-repeat center bottom;
+    background: url('../assets/backgrounds/global/home-fundo.svg') no-repeat center bottom;
     background-size: cover;
 }
 
@@ -594,7 +594,11 @@ nav {
     width: 100%;
     margin-top: -50px;
     background-color: #FFFFFF;
+    position: relative;
+    z-index: 2;
 }
+
+
 
 .titulo-ekko {
     font-size: 48px;
@@ -624,29 +628,28 @@ nav {
 
 .img-composicao {
     width: 100%;
-    max-width: 500px; /* Ajuste para não ficar estourada */
+    max-width: 500px;
     height: auto;
 }
 
-/* --- Ajustes da Coluna de Fios --- */
 /* --- Ajustes da Coluna de Fios --- */
 .fios-imagem-container {
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Força o alinhamento à esquerda, acompanhando o container de cima */
+    align-items: flex-start;
     width: 100%;
 }
 
 .fios-bloco-circulo {
     position: relative;
-    margin-left: 20px;
+    margin-left: 80px;
     width: 380px;
     height: 380px;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 3; /* O círculo agora fica NA FRENTE */
+    z-index: 3;
 }
 
 .fios-texto-circulo {
@@ -661,10 +664,8 @@ nav {
 
 .fios-img {
     position: relative;
-    z-index: 1; /* A bobina agora fica ATRÁS do círculo */
-
-    margin-top: -50px; /* Puxa a bobina para CIMA, deslizando para debaixo do círculo */
-    margin-left: -60px; /* Puxa para a ESQUERDA, compensando a área transparente da imagem original */
+    z-index: 1;
+    margin-top: -50px;
 }
 
 .fios-titulo {
@@ -704,40 +705,400 @@ nav {
     font-size: 18px;
 }
 
-
 /* ===============================
    8. RESPONSIVIDADE (MOBILE)
 ================================= */
 @media (max-width: 990px) {
-    /* O Bootstrap já quebra as colunas, aqui fazemos apenas ajustes finos de centralização */
     .fios-titulo {
         text-align: center;
     }
+
     .img-composicao {
         margin: 0 auto;
     }
 }
 
 /* ===============================
-   9. FOOTER 
+   9. SEÇÃO: PRODUTOS CARROSSEL
+================================= */
+.secao-produtos-carrossel {
+    position: relative;
+    width: 100%;
+    padding: 100px 20px 80px 20px;
+    z-index: 1;
+}
+
+.container-carrossel {
+    max-width: 1114px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.botoes-toggle {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 60px;
+}
+
+.btn-toggle {
+    width: 195px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 34px;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+
+    background: transparent;
+    color: #268AFF;
+    border: 2px solid #268AFF;
+}
+
+.btn-toggle:hover {
+    background: #6AAEFF;
+    color: #FFFFFF;
+    border-color: #6AAEFF;
+}
+
+.btn-toggle.ativo {
+    background: #268AFF;
+    color: #FFFFFF;
+    border-color: #268AFF;
+}
+
+.btn-toggle.ativo::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #268AFF;
+}
+
+.swiper-produtos {
+    width: 100%;
+    padding-bottom: 30px;
+}
+
+.swiper-slide.card-produto {
+    width: 194px !important;
+    height: 292px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.07);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    /* Removemos o padding para a imagem colar na borda */
+    box-sizing: border-box;
+    overflow: hidden;
+    /* Garante que a imagem não vaze as bordas arredondadas do card */
+}
+
+.card-produto img {
+    width: 100%;
+    /* Ocupa a largura total */
+    height: 165px;
+    /* Altura reservada para a foto */
+    object-fit: cover;
+    /* Faz a imagem preencher o espaço certinho */
+    margin: 0;
+    /* Remove a margem antiga */
+}
+
+/* DICA: Se os cabos forem PNGs com fundo transparente e a opção 'cover' 
+  estiver cortando os fios, basta trocar para: object-fit: contain;
+*/
+
+.card-produto p {
+    /* Formatação exata do seu Figma */
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    color: #113329;
+
+    /* Posicionamento do texto */
+    margin: 0;
+    padding: 10px 15px;
+    /* Dá um respiro lateral para textos muito grandes */
+    flex: 1;
+    /* Faz o texto ocupar o resto do card */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper-nav-botoes {
+    display: flex;
+    justify-content: center;
+    gap: 21px;
+    margin-top: 20px;
+}
+
+.swiper-btn-prev,
+.swiper-btn-next {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.swiper-btn-prev.swiper-button-disabled,
+.swiper-btn-next.swiper-button-disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* ===============================
+   12. SEÇÃO: COMPOSTOS
+================================= */
+.secao-compostos {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    overflow: hidden; 
+    /* NOVA REGRA: Garante a altura exata da elipse */
+    min-height: 928px; 
+    display: flex;
+    align-items: center;
+}
+
+.bg-elipse-compostos {
+    position: absolute;
+    top: 0;
+    left: -5%; 
+    width: 110%; 
+    height: 100%;
+    background: linear-gradient(83.73deg, #53BD7F 21.6%, #00783E 77.66%);
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    clip-path: ellipse(80% 50% at 50% 50%);
+    z-index: 1;
+}
+
+
+.secao-compostos .container {
+    /* z-index 2 garantido na classe 'z-2' do Bootstrap no HTML para ficar acima do BG */
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.titulo-compostos {
+    font-size: 48px;
+    line-height: 55px;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+}
+
+.subtitulo-compostos {
+    font-size: 24px;
+    line-height: 28px;
+    color: #FFFFFF;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+}
+
+.texto-descricao-composto {
+    font-size: 18px;
+    line-height: 26px;
+    color: #FFFFFF;
+   
+}
+
+
+
+@media (min-width: 992px) {
+    .secao-compostos .container {
+        max-width: 1300px; /* Alarga o container especificamente nesta seção para dar espaço */
+    }
+
+    .img-compostos {
+        width: 130%; /* Faz a imagem ignorar o limite da coluna */
+        max-width: 920px; /* Respeita o tamanho original da sua exportação */
+        margin-left: -15%; /* Puxa a imagem um pouco para a esquerda para alinhar visualmente */
+    }
+}
+
+/* --- Responsividade da Seção --- */
+@media (max-width: 768px) {
+.secao-compostos {
+        min-height: auto; /* Remove a altura fixa no mobile */
+        margin-top: 40px;
+        margin-bottom: 40px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    
+    .bg-elipse-compostos {
+        clip-path: ellipse(150% 55% at 50% 50%);
+    }
+
+    .img-compostos {
+        width: 100%; /* No mobile, volta a se comportar normalmente */
+        margin-left: 0;
+    }
+
+    .titulo-compostos {
+        font-size: 38px;
+        line-height: 44px;
+        text-align: center;
+    }
+
+    .subtitulo-compostos {
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .texto-descricao-composto {
+        text-align: center;
+    }
+}
+
+/* ===============================
+   13. SEÇÃO: METAIS PESADOS
+================================= */
+
+/* Para garantir a sobreposição perfeita, certifique-se que a seção anterior 
+   (.secao-compostos) tenha z-index maior. Adicione isto se não tiver: */
+
+
+.secao-metais-pesados {
+    position: relative;
+    width: 100%;
+    
+    /* Substitua pelo caminho correto da imagem de fundo azul que você salvou */
+    background-image: url('../assets/sections/metais/fundo-metais.svg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* O SEGREDO DO OVERLAP: Margens negativas puxam as seções vizinhas para cima desta */
+    margin-top: -200px; 
+    margin-bottom: -120px;
+    
+    /* Padding alto (120px do overlap + 80px de respiro) para o texto não ficar embaixo das elipses */
+    padding-top: 200px;
+    padding-bottom: 200px;
+    
+    /* Z-index 1 garante que esta seção fique no "fundo" do sanduíche */
+    z-index: 1; 
+}
+
+.titulo-metais {
+    color: #53BD7F;
+    font-size: 24px;
+    line-height: 34px;
+    letter-spacing: 0.5px;
+}
+
+/* Modificador específico para o Círculo nesta seção */
+.circulo-metais {
+    margin-right: 20px; /* Descola levemente da direita para alinhar com o título */
+}
+
+.circulo-metais .texto-circulo {
+    text-align: center;
+    font-size: 15px;
+    line-height: 22px;
+    padding: 0 50px; /* Garante que o texto não vaze do SVG circular */
+}
+
+.texto-descritivo-metais {
+    color: #E2E8E4; /* Um branco levemente suave para não cansar a leitura no fundo escuro */
+    font-size: 16px;
+    line-height: 28px;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 992px) {
+    .circulo-metais .texto-circulo {
+        padding: 0 40px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .secao-metais-pesados {
+        margin-top: -80px;
+        margin-bottom: -80px;
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+
+    .titulo-metais {
+        text-align: center !important;
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    .circulo-metais {
+        margin-right: 0;
+        margin-top: 30px;
+        align-self: center; /* Centraliza o círculo no mobile */
+    }
+
+    .texto-descritivo-metais {
+        text-align: center;
+        margin-top: 50px;
+    }
+}
+
+/* ===============================
+   10. FOOTER 
 ================================= */
 .footer-principal {
     width: 100%;
     min-height: 200px;
-    background-image: url('../assets/imagens/fundo-footer.svg');
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: 100% auto;
     padding: 100px 0 40px 0;
     margin-top: -80px;
     position: relative;
     z-index: 10;
+    
+    /* REMOVIDAS AS REGRAS ANTIGAS DE BACKGROUND-IMAGE */
+    /* NOVA REGRA: Garante que a elipse não passe dos limites laterais */
+    overflow: hidden; 
+}
+
+/* --- CLASSE DO NOVO FUNDO ELÍPTICO --- */
+.bg-elipse-footer {
+    position: absolute;
+    top: 0;
+    left: -5%;
+    width: 110%;
+    height: 100%;
+    
+    /* IMPORTANTE: Altere para a cor ou linear-gradient exato usado no seu footer original. 
+       Coloquei um azul-marinho escuro genérico como marcação. */
+    background: #53BD7F; 
+    
+    /* Cria a curva no topo do footer (arco voltado para cima).
+       Se quiser o arco mais alto, mude o '100%' do segundo valor para '120%'.
+       Se quiser o arco mais baixo, diminua para '80%'. */
+    clip-path: ellipse(75% 100% at 50% 100%);
+    z-index: 1;
 }
 
 .footer-container {
     max-width: 1210px;
     margin: 0 auto;
     padding: 0 30px;
+    /* Mantém o container sobre o background elíptico */
+    position: relative;
+    z-index: 2;
 }
 
 .footer-social-wrapper {
@@ -812,8 +1173,16 @@ nav {
     font-weight: 500;
 }
 
+/* Responsividade de Mobile para a Curvatura do Footer */
+@media (max-width: 768px) {
+    .bg-elipse-footer {
+        /* No celular, suavizamos a curva para que os textos laterais não "caiam" fora da área de fundo colorida */
+        clip-path: ellipse(150% 100% at 50% 100%);
+    }
+}
+
 /* ===============================
-   10. RESPONSIVIDADE (MEDIA QUERIES GERAIS)
+   11. RESPONSIVIDADE (MEDIA QUERIES GERAIS)
 ================================= */
 @media (max-width: 1170px) {
     .hero-content {
