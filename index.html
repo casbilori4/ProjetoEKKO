@@ -18,6 +18,7 @@
 
 <body>
 
+    <!-- Cabeçalho principal com navegação da página -->
     <header>
         <nav>
             <div class="logo">
@@ -25,10 +26,10 @@
             </div>
 
             <ul class="nav-links montserrat-semibold">
-                <li><a href="#" class="active">REDUÇÃO DOS IMPACTOS AMBIENTAIS</a></li>
-                <li><a href="#">TRATAMENTO DE ÁGUA</a></li>
-                <li><a href="#">PRODUTOS</a></li>
-                <li><a href="#">COMPOSTOS LIVRES DE METAIS PESADOS</a></li>
+                <li><a href="#impactos-ambientais" class="active">REDUÇÃO DOS IMPACTOS AMBIENTAIS</a></li>
+                <li><a href="#tratamento-agua">TRATAMENTO DE ÁGUA</a></li>
+                <li><a href="#produtos-aplicacoes">PRODUTOS</a></li>
+                <li><a href="#metais-pesados">COMPOSTOS LIVRES DE METAIS PESADOS</a></li>
             </ul>
 
             <div class="menu-hamburguer">
@@ -38,7 +39,8 @@
     </header>
 
     <main>
-        <section class="home-hero">
+        <!-- Primeira dobra com chamada principal da marca -->
+        <section id="home" class="home-hero">
             <div class="hero-content">
                 <div class="hero-logo-gigante">
                     <img src="assets/logos/logoEKKO.svg" alt="Logo do Projeto EKKO Grande">
@@ -62,13 +64,19 @@
             </div>
         </section>
 
+        <!-- Seção institucional sobre redução de impactos ambientais -->
         <section id="impactos-ambientais" class="secao-impactos">
             <div class="container-impactos">
 
                 <div class="impactos-header">
                     <p class="montserrat-regular titulo-reducao">REDUÇÃO DOS</p>
                     <div class="texto-inline">
-                        <img src="assets/imagens/impactos/texto-inline.svg" alt="">
+                        <picture>
+                            <source media="(max-width: 750px)"
+                                srcset="assets/imagens/impactos/texto-inline-reduzido.svg">
+                            <img src="assets/imagens/impactos/texto-inline.svg"
+                                alt="Texto do título de redução dos impactos">
+                        </picture>
                     </div>
                 </div>
 
@@ -102,12 +110,13 @@
             </div>
         </section>
 
+        <!-- Seção do sistema próprio de tratamento de água -->
         <section id="tratamento-agua" class="secao-tratamento">
             <div class="tratamento-container">
                 <div class="tratamento-header">
                     <p class="montserrat-regular subtitulo-sistema">SISTEMA DE</p>
                     <div class="titulo-inline">
-                        <img src="assets/imagens/tratamento/tratamento-inline.svg" alt="">
+                        <img src="assets/imagens/tratamento/tratamento-inline.svg" alt="Tratamento de água">
                     </div>
                 </div>
 
@@ -140,6 +149,7 @@
             </div>
         </section>
 
+        <!-- Seção sobre fonte renovável e linha de fios -->
         <section id="fonte-renovavel" class="secao-renovavel py-5">
 
             <div class="container mb-5">
@@ -218,6 +228,7 @@
 
         </section>
 
+        <!-- Carrossel de aplicações e vantagens dos produtos -->
         <section id="produtos-aplicacoes" class="secao-produtos-carrossel">
             <div class="container-carrossel">
 
@@ -268,14 +279,16 @@
             </div>
         </section>
 
+        <!-- Seção do composto alternativo EKKO e seus usos -->
         <section id="compostos" class="secao-compostos">
             <div class="bg-elipse-compostos"></div>
-            
+
             <div class="container position-relative z-2 py-5">
                 <div class="row align-items-center">
-                    
+
                     <div class="col-md-6 col-12 mb-5 mb-md-0 text-center">
-                        <img src="assets/sections/compostos/compostos.svg" alt="Ilustração do Composto EKKO com sapato e garfo" class="img-fluid img-compostos">
+                        <img src="assets/sections/compostos/compostos.svg"
+                            alt="Ilustração do Composto EKKO com sapato e garfo" class="img-fluid img-compostos">
                     </div>
 
                     <div class="col-md-6 col-12">
@@ -284,16 +297,17 @@
                             <h3 class="montserrat-medium subtitulo-compostos text-uppercase">
                                 Composto Alternativo EKKO
                             </h3>
-                            
+
                             <p class="montserrat-regular texto-descricao-composto">
-                                Também focado em ações que contribuam com a redução dos impactos ambientais e química 
-                                renovável, o composto de PVC EKKO® foi desenvolvido a partir de 100% do 
-                                reaproveitamento dos resíduos de fabricação EKKO que seriam descartados no meio ambiente 
+                                Também focado em ações que contribuam com a redução dos impactos ambientais e química
+                                renovável, o composto de PVC EKKO® foi desenvolvido a partir de 100% do
+                                reaproveitamento dos resíduos de fabricação EKKO que seriam descartados no meio ambiente
                                 e não receberiam o tratamento adequado para voltar a ser uma matéria prima.
                             </p>
-                            
+
                             <p class="montserrat-regular texto-descricao-composto mt-3">
-                                Estes resíduos são selecionados e reprocessados tornando um produto novo, renovável e focado 
+                                Estes resíduos são selecionados e reprocessados tornando um produto novo, renovável e
+                                focado
                                 para aplicações.
                             </p>
                         </div>
@@ -303,17 +317,18 @@
             </div>
         </section>
 
+        <!-- Seção sobre compostos e masters sem metais pesados -->
         <section id="metais-pesados" class="secao-metais-pesados">
             <div class="container position-relative z-2">
-                <div class="row align-items-center">
-                    
+                <div class="row">
+
                     <div class="col-md-6 col-12 mb-5 mb-md-0 d-flex flex-column align-items-end">
                         <h2 class="montserrat-medium titulo-metais text-end">
                             COMPOSTOS E MASTERS DE<br>
                             PIGMENTOS LIVRES DE METAIS<br>
                             PESADOS
                         </h2>
-                        
+
                         <div class="bloco-circulo circulo-metais mt-4">
                             <img src="assets/imagens/tratamento/circulo.svg" alt="Fundo Círculo" class="bg-circulo">
                             <p class="texto-circulo montserrat-regular text-white">
@@ -332,14 +347,17 @@
                     <div class="col-md-6 col-12">
                         <div class="texto-metais-container ps-md-4">
                             <p class="montserrat-regular texto-descritivo-metais">
-                                Estes metais são obtidos através de atividades extrativas da mineração. Alguns produtores de 
-                                plásticos costumavam usar aditivos ou pigmentos que davam coloração ou 
-                                propriedades específicas a compostos, porém após os estudos científicos apontarem os 
-                                <span class="montserrat-bold text-white">malefícios</span> que estes tipos de metais podem 
-                                causar para a saúde humana, tais como: <span class="montserrat-bold text-white">danos 
-                                nas funções mentais e nervosas e riscos para outros órgãos</span>, foi regulamentado a proibição 
-                                deste aditivo nos processos produtivos industriais. Desta maneira estamos protegendo o 
-                                meio ambiente e a contaminação de pessoas tanto que estão em contato com o produto final 
+                                Estes metais são obtidos através de atividades extrativas da mineração. Alguns
+                                produtores de
+                                plásticos costumavam usar aditivos ou pigmentos que davam coloração ou
+                                propriedades específicas a compostos, porém após os estudos científicos apontarem os
+                                <span class="montserrat-bold text-white">malefícios</span> que estes tipos de metais
+                                podem
+                                causar para a saúde humana, tais como: <span class="montserrat-bold text-white">danos
+                                    nas funções mentais e nervosas e riscos para outros órgãos</span>, foi regulamentado
+                                a proibição
+                                deste aditivo nos processos produtivos industriais. Desta maneira estamos protegendo o
+                                meio ambiente e a contaminação de pessoas tanto que estão em contato com o produto final
                                 e também no processo de fabricação destes produtos.
                             </p>
                         </div>
@@ -351,6 +369,7 @@
 
     </main>
 
+    <!-- Menu lateral usado na navegação mobile -->
     <div class="menu-overlay"></div>
     <aside class="menu-lateral">
         <div class="fechar-menu">
@@ -358,14 +377,15 @@
         </div>
 
         <ul class="nav-links-mobile montserrat-semibold">
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">EMPRESA</a></li>
-            <li><a href="#">PRODUTOS</a></li>
-            <li><a href="#">SEGMENTOS</a></li>
-            <li><a href="#">CONTATO</a></li>
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#impactos-ambientais">EMPRESA</a></li>
+            <li><a href="#produtos-aplicacoes">PRODUTOS</a></li>
+            <li><a href="#compostos">SEGMENTOS</a></li>
+            <li><a href="#contato">CONTATO</a></li>
         </ul>
     </aside>
 
+    <!-- Botão flutuante que abre o chat de contato -->
     <a href="#" class="chat-flutuante" id="btnAbrirChat">
         <svg width="165" height="165" viewBox="0 0 165 165" fill="none" xmlns="http://www.w3.org/2000/svg">
             <foreignObject x="0" y="0" width="165" height="165">
@@ -398,6 +418,7 @@
         </svg>
     </a>
 
+    <!-- Janela de conversa do chat -->
     <div class="chat-modal" id="modalChat">
         <div class="chat-header">
             <h3 class="montserrat-semibold">Fale Conosco</h3>
@@ -424,7 +445,8 @@
         </div>
     </div>
 
-    <footer class="footer-principal">
+    <!-- Rodapé com redes sociais e atalhos institucionais -->
+    <footer id="contato" class="footer-principal">
         <div class="bg-elipse-footer"></div>
 
         <div class="footer-container position-relative z-2">
@@ -452,7 +474,7 @@
                         <a href="#"><span><img src="assets/ui/item-branco.svg" alt=""></span> Política de cookies</a>
                     </div>
 
-                    <a href="#" class="btn-voltar ubuntu-medium">
+                    <a href="#home" class="btn-voltar ubuntu-medium">
                         <span><svg width="7" height="12" viewBox="0 0 7 12" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M0.780762 10.6248L4.78076 5.62476L0.780761 0.624756" stroke="white"
@@ -467,6 +489,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Lógica interativa da página -->
     <script src="script/script.js"></script>
 </body>
 

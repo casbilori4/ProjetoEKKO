@@ -3,17 +3,31 @@ document.addEventListener("DOMContentLoaded", function () {
     // ===============================
     // LÓGICA DE NAVEGAÇÃO
     // ===============================
-    const navLinks = document.querySelectorAll('.nav-links a');
+    const navLinks = document.querySelectorAll('.nav-links a, .nav-links-mobile a');
+
+    const atualizarLinkAtivo = function () {
+        const hashAtual = window.location.hash || '#impactos-ambientais';
+
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            link.classList.toggle('active', href === hashAtual);
+        });
+    };
 
     navLinks.forEach(link => {
-        link.addEventListener('click', function (e) {
-            if (this.getAttribute('href') === "#") {
-                e.preventDefault();
+        link.addEventListener('click', function () {
+            atualizarLinkAtivo();
+
+            if (menuLateral && menuOverlay && this.closest('.nav-links-mobile')) {
+                menuLateral.classList.remove('ativo');
+                menuOverlay.classList.remove('ativo');
+                document.body.style.overflow = '';
             }
-            navLinks.forEach(item => item.classList.remove('active'));
-            this.classList.add('active');
         });
     });
+
+    atualizarLinkAtivo();
+    window.addEventListener('hashchange', atualizarLinkAtivo);
 
     // ===============================
     // LÓGICA DO MENU LATERAL (MODAL)
@@ -25,16 +39,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (btnAbrirMenu) {
         btnAbrirMenu.addEventListener('click', function () {
+            if (!menuLateral || !menuOverlay) {
+                return;
+            }
+
             menuLateral.classList.add('ativo');
             menuOverlay.classList.add('ativo');
-            document.body.style.overflow = 'hidden'; 
+            document.body.style.overflow = 'hidden';
         });
     }
 
     const fecharMenu = function () {
+        if (!menuLateral || !menuOverlay) {
+            return;
+        }
+
         menuLateral.classList.remove('ativo');
         menuOverlay.classList.remove('ativo');
-        document.body.style.overflow = ''; 
+        document.body.style.overflow = '';
     };
 
     if (btnFecharMenu) {
@@ -68,8 +90,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // ===============================
     if (document.querySelector('.swiper-produtos')) {
         const swiper = new Swiper('.swiper-produtos', {
-            slidesPerView: 'auto', 
-            spaceBetween: 36,      
+            slidesPerView: 'auto',
+            spaceBetween: 36,
             navigation: {
                 nextEl: '.swiper-btn-next',
                 prevEl: '.swiper-btn-prev',
@@ -92,9 +114,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // LÓGICA DOS BOTÕES TOGGLE
     // ===============================
     const botoesToggle = document.querySelectorAll('.btn-toggle');
-    
+
     botoesToggle.forEach(btn => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function () {
             botoesToggle.forEach(b => b.classList.remove('ativo'));
             this.classList.add('ativo');
         });

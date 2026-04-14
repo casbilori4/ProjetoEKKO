@@ -7,6 +7,15 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+section[id],
+footer[id] {
+    scroll-margin-top: 120px;
+}
+
 body {
     background-color: #FFFFFF;
     background-image: url('../assets/backgrounds/global/fundo-pagina.svg');
@@ -262,13 +271,19 @@ nav {
 ================================= */
 .secao-tratamento {
     position: relative;
+    min-height: 955px;
+    min-width: 100%;
+    background: url('../assets/imagens/tratamento/fundo-tratamento.svg') center / cover no-repeat;
+
+    height: 100%;
     width: 100%;
-    aspect-ratio: 1398 / 900;
-    background-image: url('../assets/imagens/tratamento/fundo-tratamento.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    z-index: 10;
     display: flex;
+
+    padding-left: 36px;
+    padding-right: 30px;
+
+
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -285,7 +300,7 @@ nav {
 
 .tratamento-header {
     text-align: left;
-    margin-left: 50px;
+    margin-left: 70px;
     margin-bottom: -45px;
     z-index: 2;
 }
@@ -293,7 +308,7 @@ nav {
 .subtitulo-sistema {
     color: #FFFFFF;
     font-size: 36px;
-    padding-bottom: 20px;
+
 }
 
 .titulo-inline img {
@@ -311,8 +326,8 @@ nav {
 
 .bloco-circulo {
     position: relative;
-    width: 345px;
-    height: 345px;
+    width: 345.82px;
+    height: 345.82px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -342,7 +357,7 @@ nav {
 }
 
 .bloco-texto p {
-    margin-top: 39px;
+    margin-top: 41px;
     color: #FFFFFF;
     font-size: 18px;
     line-height: 25px;
@@ -359,6 +374,58 @@ nav {
 .triangulos-base img {
     width: 130px;
     height: auto;
+}
+
+@media (max-width: 990px) {
+    .secao-tratamento {
+        min-height: 835px;
+    }
+
+    .tratamento-header {
+        margin-left: 24px;
+    }
+}
+
+@media (max-width: 750px) {
+    .secao-tratamento {
+        min-height: 835px;
+    }
+
+    .tratamento-header {
+        margin-left: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tratamento-header {
+        margin-left: 4px;
+    }
+
+    .tratamento-conteudo {
+        gap: 34px;
+    }
+}
+
+@media (max-width: 320px) {
+    .tratamento-header {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .tratamento-conteudo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .texto-circulo {
+        text-align: center;
+    }
+
+    .bloco-texto p {
+        text-align: center;
+    }
 }
 
 /* ===============================
@@ -596,6 +663,26 @@ nav {
     background-color: #FFFFFF;
     position: relative;
     z-index: 2;
+    overflow: hidden;
+}
+
+.secao-renovavel::after {
+    content: '';
+    position: absolute;
+    left: -5%;
+    bottom: 0;
+    width: 110%;
+    height: 150px;
+    background-image: url('../assets/backgrounds/global/fundo-pagina.svg');
+    background-repeat: repeat;
+    clip-path: ellipse(70% 100% at 50% 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.secao-renovavel>* {
+    position: relative;
+    z-index: 2;
 }
 
 
@@ -718,13 +805,28 @@ nav {
     }
 }
 
+@media (max-width: 750px) {
+    #produtos-fios .row {
+        flex-direction: column;
+    }
+
+    #produtos-fios .fios-lista-container,
+    #produtos-fios .fios-lista-container.ms-lg-4 {
+        display: none !important;
+    }
+
+    .fios-imagem-container {
+        align-items: center;
+    }
+}
+
 /* ===============================
    9. SEÇÃO: PRODUTOS CARROSSEL
 ================================= */
 .secao-produtos-carrossel {
     position: relative;
     width: 100%;
-    padding: 100px 20px 80px 20px;
+    padding: 127px 20px 80px 20px;
     z-index: 1;
 }
 
@@ -868,32 +970,27 @@ nav {
     position: relative;
     z-index: 5;
     width: 100%;
+   background: linear-gradient(83.73deg, #53BD7F 21.6%, #00783E 77.66%); 
+
     margin-top: 80px;
     margin-bottom: 80px;
-    overflow: hidden; 
-    /* NOVA REGRA: Garante a altura exata da elipse */
-    min-height: 928px; 
+    overflow: hidden;
+    min-height: 824px;
     display: flex;
     align-items: center;
+
+
+     clip-path: ellipse(150% 50% at 50% 50%);
 }
 
-.bg-elipse-compostos {
-    position: absolute;
-    top: 0;
-    left: -5%; 
-    width: 110%; 
-    height: 100%;
-    background: linear-gradient(83.73deg, #53BD7F 21.6%, #00783E 77.66%);
-    transform: matrix(-1, 0, 0, 1, 0, 0);
-    clip-path: ellipse(80% 50% at 50% 50%);
-    z-index: 1;
-}
+
+
 
 
 .secao-compostos .container {
     /* z-index 2 garantido na classe 'z-2' do Bootstrap no HTML para ficar acima do BG */
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 56px;
+    padding-bottom: 56px;
 }
 
 .titulo-compostos {
@@ -915,39 +1012,49 @@ nav {
     font-size: 18px;
     line-height: 26px;
     color: #FFFFFF;
-   
+
 }
 
 
 
 @media (min-width: 992px) {
     .secao-compostos .container {
-        max-width: 1300px; /* Alarga o container especificamente nesta seção para dar espaço */
+        max-width: 1300px;
+        /* Alarga o container especificamente nesta seção para dar espaço */
     }
 
     .img-compostos {
-        width: 130%; /* Faz a imagem ignorar o limite da coluna */
-        max-width: 920px; /* Respeita o tamanho original da sua exportação */
-        margin-left: -15%; /* Puxa a imagem um pouco para a esquerda para alinhar visualmente */
+        width: 130%;
+        /* Faz a imagem ignorar o limite da coluna */
+        max-width: 920px;
+        /* Respeita o tamanho original da sua exportação */
+        margin-left: -15%;
+        /* Puxa a imagem um pouco para a esquerda para alinhar visualmente */
     }
 }
 
 /* --- Responsividade da Seção --- */
 @media (max-width: 768px) {
-.secao-compostos {
-        min-height: auto; /* Remove a altura fixa no mobile */
+    .secao-compostos {
+        min-height: auto;
+        /* Remove a altura fixa no mobile */
         margin-top: 40px;
         margin-bottom: 40px;
         padding-top: 50px;
         padding-bottom: 50px;
     }
-    
+
     .bg-elipse-compostos {
-        clip-path: ellipse(150% 55% at 50% 50%);
+        width: 180%;
+        height: 100%;
+        left: 50%;
+        margin-left: -90%;
+        border-radius: 50%;
     }
 
     .img-compostos {
-        width: 100%; /* No mobile, volta a se comportar normalmente */
+        width: 100%;
+        /* No mobile, volta a se comportar normalmente */
         margin-left: 0;
     }
 
@@ -980,22 +1087,23 @@ nav {
     position: relative;
     width: 100%;
     
+
     /* Substitua pelo caminho correto da imagem de fundo azul que você salvou */
-    background-image: url('../assets/sections/metais/fundo-metais.svg'); 
+    background-image: url('../assets/sections/metais/fundo-metais.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    
+
     /* O SEGREDO DO OVERLAP: Margens negativas puxam as seções vizinhas para cima desta */
-    margin-top: -200px; 
+    margin-top: -110px;
     margin-bottom: -120px;
-    
+
     /* Padding alto (120px do overlap + 80px de respiro) para o texto não ficar embaixo das elipses */
     padding-top: 200px;
     padding-bottom: 200px;
-    
+
     /* Z-index 1 garante que esta seção fique no "fundo" do sanduíche */
-    z-index: 1; 
+    z-index: 1;
 }
 
 .titulo-metais {
@@ -1007,20 +1115,25 @@ nav {
 
 /* Modificador específico para o Círculo nesta seção */
 .circulo-metais {
-    margin-right: 20px; /* Descola levemente da direita para alinhar com o título */
+    margin-right: 20px;
+    /* Descola levemente da direita para alinhar com o título */
 }
 
 .circulo-metais .texto-circulo {
-    text-align: center;
+    text-align: left;
     font-size: 15px;
     line-height: 22px;
-    padding: 0 50px; /* Garante que o texto não vaze do SVG circular */
+    padding: 0 50px;
+    /* Garante que o texto não vaze do SVG circular */
 }
 
 .texto-descritivo-metais {
-    color: #E2E8E4; /* Um branco levemente suave para não cansar a leitura no fundo escuro */
+    color: #E2E8E4;
+    /* Um branco levemente suave para não cansar a leitura no fundo escuro */
     font-size: 16px;
-    line-height: 28px;
+    line-height: 25px;
+    margin-right: 220px;
+
 }
 
 /* --- Responsividade --- */
@@ -1048,7 +1161,8 @@ nav {
     .circulo-metais {
         margin-right: 0;
         margin-top: 30px;
-        align-self: center; /* Centraliza o círculo no mobile */
+        align-self: center;
+        /* Centraliza o círculo no mobile */
     }
 
     .texto-descritivo-metais {
@@ -1062,15 +1176,16 @@ nav {
 ================================= */
 .footer-principal {
     width: 100%;
-    min-height: 200px;
-    padding: 100px 0 40px 0;
+    height: 241px;
     margin-top: -80px;
     position: relative;
     z-index: 10;
-    
+    display: flex;
+    align-items: center;
+
     /* REMOVIDAS AS REGRAS ANTIGAS DE BACKGROUND-IMAGE */
     /* NOVA REGRA: Garante que a elipse não passe dos limites laterais */
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 /* --- CLASSE DO NOVO FUNDO ELÍPTICO --- */
@@ -1080,32 +1195,34 @@ nav {
     left: -5%;
     width: 110%;
     height: 100%;
-    
-    /* IMPORTANTE: Altere para a cor ou linear-gradient exato usado no seu footer original. 
-       Coloquei um azul-marinho escuro genérico como marcação. */
-    background: #53BD7F; 
-    
-    /* Cria a curva no topo do footer (arco voltado para cima).
-       Se quiser o arco mais alto, mude o '100%' do segundo valor para '120%'.
-       Se quiser o arco mais baixo, diminua para '80%'. */
+     background: linear-gradient(83.73deg, #53BD7F 21.6%, #00783E 77.66%);
+     transform: matrix(-1, 0, 0, 1, 0, 0);
+;
+
     clip-path: ellipse(75% 100% at 50% 100%);
     z-index: 1;
 }
 
 .footer-container {
     max-width: 1210px;
+    width: 100%;
+    height: 100%;
+
     margin: 0 auto;
     padding: 0 30px;
     /* Mantém o container sobre o background elíptico */
     position: relative;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .footer-social-wrapper {
     display: flex;
     justify-content: center;
     gap: 35px;
-    margin-bottom: 50px;
+    margin-bottom: 24px;
 }
 
 .footer-social-wrapper img {
@@ -1122,7 +1239,7 @@ nav {
     width: 100%;
     height: 1px;
     background-color: rgba(255, 255, 255, 0.2);
-    margin-bottom: 30px;
+    margin-bottom: 18px;
 }
 
 .footer-bottom-row {
