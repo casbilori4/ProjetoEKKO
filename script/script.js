@@ -19,9 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
             atualizarLinkAtivo();
 
             if (menuLateral && menuOverlay && this.closest('.nav-links-mobile')) {
-                menuLateral.classList.remove('ativo');
-                menuOverlay.classList.remove('ativo');
-                document.body.style.overflow = '';
+                fecharMenu();
             }
         });
     });
@@ -37,17 +35,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuLateral = document.querySelector('.menu-lateral');
     const menuOverlay = document.querySelector('.menu-overlay');
 
-    if (btnAbrirMenu) {
-        btnAbrirMenu.addEventListener('click', function () {
-            if (!menuLateral || !menuOverlay) {
-                return;
-            }
+    const abrirMenu = function () {
+        if (!menuLateral || !menuOverlay) {
+            return;
+        }
 
-            menuLateral.classList.add('ativo');
-            menuOverlay.classList.add('ativo');
-            document.body.style.overflow = 'hidden';
-        });
-    }
+        menuLateral.classList.add('ativo');
+        menuOverlay.classList.add('ativo');
+        document.body.classList.add('menu-aberto');
+        document.body.style.overflow = 'hidden';
+    };
 
     const fecharMenu = function () {
         if (!menuLateral || !menuOverlay) {
@@ -56,8 +53,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
         menuLateral.classList.remove('ativo');
         menuOverlay.classList.remove('ativo');
+        document.body.classList.remove('menu-aberto');
         document.body.style.overflow = '';
     };
+
+    if (btnAbrirMenu) {
+        btnAbrirMenu.addEventListener('click', function () {
+            if (!menuLateral || !menuOverlay) {
+                return;
+            }
+
+            if (menuLateral.classList.contains('ativo')) {
+                fecharMenu();
+                return;
+            }
+
+            abrirMenu();
+        });
+    }
 
     if (btnFecharMenu) {
         btnFecharMenu.addEventListener('click', fecharMenu);
@@ -89,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // LÓGICA DO CARROSSEL DE PRODUTOS
     // ===============================
     if (document.querySelector('.swiper-produtos')) {
-        const swiper = new Swiper('.swiper-produtos', {
+        new Swiper('.swiper-produtos', {
             slidesPerView: 'auto',
             spaceBetween: 36,
             navigation: {

@@ -9,6 +9,10 @@
 
 html {
     scroll-behavior: smooth;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    background-color: #FFFFFF;
 }
 
 section[id],
@@ -20,6 +24,8 @@ body {
     background-color: #FFFFFF;
     background-image: url('../assets/backgrounds/global/fundo-pagina.svg');
     background-repeat: repeat;
+    width: 100%;
+    max-width: 100%;
     overflow-x: hidden;
 }
 
@@ -102,6 +108,7 @@ nav {
     content: '';
     height: 4px;
     width: 43px;
+    transition: background-color 0.25s ease;
 }
 
 .menu::before,
@@ -111,6 +118,7 @@ nav {
     content: '';
     height: 4px;
     width: 43px;
+    transition: top 0.25s ease, transform 0.25s ease;
 }
 
 .menu::after {
@@ -376,60 +384,371 @@ nav {
     height: auto;
 }
 
-@media (max-width: 990px) {
-    .secao-tratamento {
-        min-height: 835px;
-    }
-
-    .tratamento-header {
-        margin-left: 24px;
-    }
+/* ===============================
+   6. SEÇÃO: FONTE RENOVÁVEL E FIOS
+================================= */
+.secao-renovavel {
+    width: 100%;
+    margin-top: -50px;
+    background-color: #FFFFFF;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
 }
 
-@media (max-width: 750px) {
-    .secao-tratamento {
-        min-height: 835px;
-    }
-
-    .tratamento-header {
-        margin-left: 12px;
-    }
+.secao-renovavel::after {
+    content: '';
+    position: absolute;
+    left: -5%;
+    bottom: 0;
+    width: 110%;
+    height: 150px;
+    background-image: url('../assets/backgrounds/global/fundo-pagina.svg');
+    background-repeat: repeat;
+    clip-path: ellipse(70% 100% at 50% 100%);
+    z-index: 1;
+    pointer-events: none;
 }
 
-@media (max-width: 480px) {
-    .tratamento-header {
-        margin-left: 4px;
-    }
-
-    .tratamento-conteudo {
-        gap: 34px;
-    }
+.secao-renovavel>* {
+    position: relative;
+    z-index: 2;
 }
 
-@media (max-width: 320px) {
-    .tratamento-header {
-        margin-left: 0;
-        text-align: center;
-    }
 
-    .tratamento-conteudo {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 20px;
-    }
 
-    .texto-circulo {
-        text-align: center;
-    }
+.titulo-ekko {
+    font-size: 48px;
+    line-height: 55px;
+    color: #00783E;
+    margin-bottom: 26px;
+}
 
-    .bloco-texto p {
-        text-align: center;
-    }
+.subtitulo-composto {
+    font-size: 24px;
+    line-height: 28px;
+    color: #00783E;
+    margin-bottom: 26px;
+    text-transform: uppercase;
+}
+
+.subtitulo-composto .cor-destaque {
+    color: #00783E;
+    text-transform: none;
+}
+
+.descricao-renovavel {
+    font-size: 18px;
+    line-height: 28px;
+    color: #5A5A5A;
+}
+
+.img-composicao {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+.fios-imagem-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.fios-bloco-circulo {
+    position: relative;
+    margin-left: 80px;
+    width: 380px;
+    height: 380px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+.fios-texto-circulo {
+    position: relative;
+    width: 230px;
+    z-index: 4;
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.fios-img {
+    position: relative;
+    z-index: 1;
+    margin-top: -50px;
+}
+
+.fios-titulo {
+    color: #00783E;
+    font-size: 24px;
+    line-height: 33px;
+    margin-bottom: 40px;
+}
+
+.fios-lista-produtos {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.fios-lista-produtos li {
+    border-bottom: 1px solid #E0E0E0;
+    transition: border-color 0.3s ease;
+}
+
+.fios-lista-produtos li:hover {
+    border-bottom-color: #64ABFF;
+}
+
+.fios-lista-produtos li a {
+    display: flex;
+    align-items: center;
+    line-height: 61px;
+    color: #268AFF;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.fios-lista-produtos li a span {
+    font-weight: bold;
+    font-size: 18px;
 }
 
 /* ===============================
-   6. MODAIS E FLUTUANTES 
+   7. SEÇÃO: PRODUTOS CARROSSEL
+================================= */
+.secao-produtos-carrossel {
+    position: relative;
+    width: 100%;
+    padding: 127px 20px 80px 20px;
+    z-index: 1;
+}
+
+.container-carrossel {
+    max-width: 1114px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.botoes-toggle {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 60px;
+}
+
+.btn-toggle {
+    width: 195px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 34px;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+
+    background: transparent;
+    color: #268AFF;
+    border: 2px solid #268AFF;
+}
+
+.btn-toggle:hover {
+    background: #6AAEFF;
+    color: #FFFFFF;
+    border-color: #6AAEFF;
+}
+
+.btn-toggle.ativo {
+    background: #268AFF;
+    color: #FFFFFF;
+    border-color: #268AFF;
+}
+
+.btn-toggle.ativo::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #268AFF;
+}
+
+.swiper-produtos {
+    width: 100%;
+    padding-bottom: 30px;
+}
+
+.swiper-slide.card-produto {
+    width: 194px !important;
+    height: 292px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.07);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.card-produto img {
+    width: 100%;
+    height: 165px;
+    object-fit: cover;
+    margin: 0;
+}
+
+.card-produto p {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    color: #113329;
+
+    margin: 0;
+    padding: 10px 15px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper-nav-botoes {
+    display: flex;
+    justify-content: center;
+    gap: 21px;
+    margin-top: 20px;
+}
+
+.swiper-btn-prev,
+.swiper-btn-next {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.swiper-btn-prev.swiper-button-disabled,
+.swiper-btn-next.swiper-button-disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* ===============================
+   8. SEÇÃO: COMPOSTOS
+================================= */
+.secao-compostos {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    background: linear-gradient(83.73deg, #53BD7F 21.6%, #00783E 77.66%);
+
+    margin-top: 80px;
+    margin-bottom: 80px;
+    overflow: hidden;
+    min-height: 824px;
+    display: flex;
+    align-items: center;
+
+
+    clip-path: ellipse(150% 50% at 50% 50%);
+}
+
+
+
+
+
+.secao-compostos .container {
+    padding-top: 56px;
+    padding-bottom: 56px;
+}
+
+.titulo-compostos {
+    font-size: 48px;
+    line-height: 55px;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+}
+
+.subtitulo-compostos {
+    font-size: 24px;
+    line-height: 28px;
+    color: #FFFFFF;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+}
+
+.texto-descricao-composto {
+    font-size: 18px;
+    line-height: 26px;
+    color: #FFFFFF;
+}
+
+/* ===============================
+   9. SEÇÃO: METAIS PESADOS
+================================= */
+.secao-metais-pesados {
+    position: relative;
+    width: 100%;
+    background-image: url('../assets/sections/metais/fundo-metais.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    margin-top: -110px;
+    margin-bottom: -120px;
+
+    padding-top: 200px;
+    padding-bottom: 200px;
+
+    z-index: 1;
+}
+
+.titulo-metais {
+    color: #53BD7F;
+    font-size: 24px;
+    line-height: 34px;
+    letter-spacing: 0.5px;
+}
+
+.circulo-metais {
+    width: 345.82px;
+    height: 345.82px;
+    margin-right: 20px;
+}
+
+.circulo-metais .texto-circulo {
+    text-align: left;
+    font-size: 15px;
+    line-height: 22px;
+    padding: 0 50px;
+}
+
+.texto-descritivo-metais {
+    color: #E2E8E4;
+    font-size: 16px;
+    line-height: 25px;
+    margin-right: 220px;
+}
+
+/* ===============================
+   10. MODAIS E FLUTUANTES
 ================================= */
 .menu-overlay {
     position: fixed;
@@ -485,6 +804,11 @@ nav {
     display: flex;
     flex-direction: column;
     gap: 35px;
+}
+
+.nav-links-mobile-principal,
+.menu-lateral-divider {
+    display: none;
 }
 
 .nav-links-mobile li a {
@@ -568,12 +892,6 @@ nav {
     flex-shrink: 0;
 }
 
-.chat-flutuante.oculto {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
-
 .chat-header {
     background-color: #00783E;
     color: #FFFFFF;
@@ -655,524 +973,7 @@ nav {
 }
 
 /* ===============================
-   7. SEÇÃO: FONTE RENOVÁVEL E FIOS
-================================= */
-.secao-renovavel {
-    width: 100%;
-    margin-top: -50px;
-    background-color: #FFFFFF;
-    position: relative;
-    z-index: 2;
-    overflow: hidden;
-}
-
-.secao-renovavel::after {
-    content: '';
-    position: absolute;
-    left: -5%;
-    bottom: 0;
-    width: 110%;
-    height: 150px;
-    background-image: url('../assets/backgrounds/global/fundo-pagina.svg');
-    background-repeat: repeat;
-    clip-path: ellipse(70% 100% at 50% 100%);
-    z-index: 1;
-    pointer-events: none;
-}
-
-.secao-renovavel>* {
-    position: relative;
-    z-index: 2;
-}
-
-
-
-.titulo-ekko {
-    font-size: 48px;
-    line-height: 55px;
-    color: #00783E;
-    margin-bottom: 26px;
-}
-
-.subtitulo-composto {
-    font-size: 24px;
-    line-height: 28px;
-    color: #00783E;
-    margin-bottom: 26px;
-    text-transform: uppercase;
-}
-
-.subtitulo-composto .cor-destaque {
-    color: #00783E;
-    text-transform: none;
-}
-
-.descricao-renovavel {
-    font-size: 18px;
-    line-height: 28px;
-    color: #5A5A5A;
-}
-
-.img-composicao {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-}
-
-/* --- Ajustes da Coluna de Fios --- */
-.fios-imagem-container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-}
-
-.fios-bloco-circulo {
-    position: relative;
-    margin-left: 80px;
-    width: 380px;
-    height: 380px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 3;
-}
-
-.fios-texto-circulo {
-    position: relative;
-    width: 230px;
-    z-index: 4;
-    color: #FFFFFF;
-    font-size: 16px;
-    line-height: 1.4;
-    text-align: left;
-}
-
-.fios-img {
-    position: relative;
-    z-index: 1;
-    margin-top: -50px;
-}
-
-.fios-titulo {
-    color: #00783E;
-    font-size: 24px;
-    line-height: 33px;
-    margin-bottom: 40px;
-}
-
-.fios-lista-produtos {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-}
-
-.fios-lista-produtos li {
-    border-bottom: 1px solid #E0E0E0;
-    transition: border-color 0.3s ease;
-}
-
-.fios-lista-produtos li:hover {
-    border-bottom-color: #64ABFF;
-}
-
-.fios-lista-produtos li a {
-    display: flex;
-    align-items: center;
-    line-height: 61px;
-    color: #268AFF;
-    text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s ease;
-}
-
-.fios-lista-produtos li a span {
-    font-weight: bold;
-    font-size: 18px;
-}
-
-/* ===============================
-   8. RESPONSIVIDADE (MOBILE)
-================================= */
-@media (max-width: 990px) {
-    .fios-titulo {
-        text-align: center;
-    }
-
-    .img-composicao {
-        margin: 0 auto;
-    }
-}
-
-@media (max-width: 750px) {
-    #produtos-fios .row {
-        flex-direction: column;
-    }
-
-    #produtos-fios .fios-lista-container,
-    #produtos-fios .fios-lista-container.ms-lg-4 {
-        display: none !important;
-    }
-
-    .fios-imagem-container {
-        align-items: center;
-    }
-}
-
-/* ===============================
-   9. SEÇÃO: PRODUTOS CARROSSEL
-================================= */
-.secao-produtos-carrossel {
-    position: relative;
-    width: 100%;
-    padding: 127px 20px 80px 20px;
-    z-index: 1;
-}
-
-.container-carrossel {
-    max-width: 1114px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.botoes-toggle {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 60px;
-}
-
-.btn-toggle {
-    width: 195px;
-    height: 50px;
-    font-size: 16px;
-    line-height: 34px;
-    border-radius: 4px;
-    cursor: pointer;
-    position: relative;
-    transition: all 0.3s ease;
-
-    background: transparent;
-    color: #268AFF;
-    border: 2px solid #268AFF;
-}
-
-.btn-toggle:hover {
-    background: #6AAEFF;
-    color: #FFFFFF;
-    border-color: #6AAEFF;
-}
-
-.btn-toggle.ativo {
-    background: #268AFF;
-    color: #FFFFFF;
-    border-color: #268AFF;
-}
-
-.btn-toggle.ativo::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid #268AFF;
-}
-
-.swiper-produtos {
-    width: 100%;
-    padding-bottom: 30px;
-}
-
-.swiper-slide.card-produto {
-    width: 194px !important;
-    height: 292px;
-    background: #FFFFFF;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.07);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-    /* Removemos o padding para a imagem colar na borda */
-    box-sizing: border-box;
-    overflow: hidden;
-    /* Garante que a imagem não vaze as bordas arredondadas do card */
-}
-
-.card-produto img {
-    width: 100%;
-    /* Ocupa a largura total */
-    height: 165px;
-    /* Altura reservada para a foto */
-    object-fit: cover;
-    /* Faz a imagem preencher o espaço certinho */
-    margin: 0;
-    /* Remove a margem antiga */
-}
-
-/* DICA: Se os cabos forem PNGs com fundo transparente e a opção 'cover' 
-  estiver cortando os fios, basta trocar para: object-fit: contain;
-*/
-
-.card-produto p {
-    /* Formatação exata do seu Figma */
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 20px;
-    text-align: center;
-    color: #113329;
-
-    /* Posicionamento do texto */
-    margin: 0;
-    padding: 10px 15px;
-    /* Dá um respiro lateral para textos muito grandes */
-    flex: 1;
-    /* Faz o texto ocupar o resto do card */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.swiper-nav-botoes {
-    display: flex;
-    justify-content: center;
-    gap: 21px;
-    margin-top: 20px;
-}
-
-.swiper-btn-prev,
-.swiper-btn-next {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-}
-
-.swiper-btn-prev.swiper-button-disabled,
-.swiper-btn-next.swiper-button-disabled {
-    opacity: 0.3;
-    cursor: not-allowed;
-}
-
-/* ===============================
-   12. SEÇÃO: COMPOSTOS
-================================= */
-.secao-compostos {
-    position: relative;
-    z-index: 5;
-    width: 100%;
-   background: linear-gradient(83.73deg, #53BD7F 21.6%, #00783E 77.66%); 
-
-    margin-top: 80px;
-    margin-bottom: 80px;
-    overflow: hidden;
-    min-height: 824px;
-    display: flex;
-    align-items: center;
-
-
-     clip-path: ellipse(150% 50% at 50% 50%);
-}
-
-
-
-
-
-.secao-compostos .container {
-    /* z-index 2 garantido na classe 'z-2' do Bootstrap no HTML para ficar acima do BG */
-    padding-top: 56px;
-    padding-bottom: 56px;
-}
-
-.titulo-compostos {
-    font-size: 48px;
-    line-height: 55px;
-    color: #FFFFFF;
-    margin-bottom: 15px;
-}
-
-.subtitulo-compostos {
-    font-size: 24px;
-    line-height: 28px;
-    color: #FFFFFF;
-    margin-bottom: 25px;
-    letter-spacing: 0.5px;
-}
-
-.texto-descricao-composto {
-    font-size: 18px;
-    line-height: 26px;
-    color: #FFFFFF;
-
-}
-
-
-
-@media (min-width: 992px) {
-    .secao-compostos .container {
-        max-width: 1300px;
-        /* Alarga o container especificamente nesta seção para dar espaço */
-    }
-
-    .img-compostos {
-        width: 130%;
-        /* Faz a imagem ignorar o limite da coluna */
-        max-width: 920px;
-        /* Respeita o tamanho original da sua exportação */
-        margin-left: -15%;
-        /* Puxa a imagem um pouco para a esquerda para alinhar visualmente */
-    }
-}
-
-/* --- Responsividade da Seção --- */
-@media (max-width: 768px) {
-    .secao-compostos {
-        min-height: auto;
-        /* Remove a altura fixa no mobile */
-        margin-top: 40px;
-        margin-bottom: 40px;
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
-
-    .bg-elipse-compostos {
-        width: 180%;
-        height: 100%;
-        left: 50%;
-        margin-left: -90%;
-        border-radius: 50%;
-    }
-
-    .img-compostos {
-        width: 100%;
-        /* No mobile, volta a se comportar normalmente */
-        margin-left: 0;
-    }
-
-    .titulo-compostos {
-        font-size: 38px;
-        line-height: 44px;
-        text-align: center;
-    }
-
-    .subtitulo-compostos {
-        font-size: 18px;
-        text-align: center;
-        margin-bottom: 30px;
-    }
-
-    .texto-descricao-composto {
-        text-align: center;
-    }
-}
-
-/* ===============================
-   13. SEÇÃO: METAIS PESADOS
-================================= */
-
-/* Para garantir a sobreposição perfeita, certifique-se que a seção anterior 
-   (.secao-compostos) tenha z-index maior. Adicione isto se não tiver: */
-
-
-.secao-metais-pesados {
-    position: relative;
-    width: 100%;
-    
-
-    /* Substitua pelo caminho correto da imagem de fundo azul que você salvou */
-    background-image: url('../assets/sections/metais/fundo-metais.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    /* O SEGREDO DO OVERLAP: Margens negativas puxam as seções vizinhas para cima desta */
-    margin-top: -110px;
-    margin-bottom: -120px;
-
-    /* Padding alto (120px do overlap + 80px de respiro) para o texto não ficar embaixo das elipses */
-    padding-top: 200px;
-    padding-bottom: 200px;
-
-    /* Z-index 1 garante que esta seção fique no "fundo" do sanduíche */
-    z-index: 1;
-}
-
-.titulo-metais {
-    color: #53BD7F;
-    font-size: 24px;
-    line-height: 34px;
-    letter-spacing: 0.5px;
-}
-
-/* Modificador específico para o Círculo nesta seção */
-.circulo-metais {
-    margin-right: 20px;
-    /* Descola levemente da direita para alinhar com o título */
-}
-
-.circulo-metais .texto-circulo {
-    text-align: left;
-    font-size: 15px;
-    line-height: 22px;
-    padding: 0 50px;
-    /* Garante que o texto não vaze do SVG circular */
-}
-
-.texto-descritivo-metais {
-    color: #E2E8E4;
-    /* Um branco levemente suave para não cansar a leitura no fundo escuro */
-    font-size: 16px;
-    line-height: 25px;
-    margin-right: 220px;
-
-}
-
-/* --- Responsividade --- */
-@media (max-width: 992px) {
-    .circulo-metais .texto-circulo {
-        padding: 0 40px;
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 768px) {
-    .secao-metais-pesados {
-        margin-top: -80px;
-        margin-bottom: -80px;
-        padding-top: 150px;
-        padding-bottom: 150px;
-    }
-
-    .titulo-metais {
-        text-align: center !important;
-        font-size: 22px;
-        line-height: 30px;
-    }
-
-    .circulo-metais {
-        margin-right: 0;
-        margin-top: 30px;
-        align-self: center;
-        /* Centraliza o círculo no mobile */
-    }
-
-    .texto-descritivo-metais {
-        text-align: center;
-        margin-top: 50px;
-    }
-}
-
-/* ===============================
-   10. FOOTER 
+   11. FOOTER
 ================================= */
 .footer-principal {
     width: 100%;
@@ -1183,21 +984,17 @@ nav {
     display: flex;
     align-items: center;
 
-    /* REMOVIDAS AS REGRAS ANTIGAS DE BACKGROUND-IMAGE */
-    /* NOVA REGRA: Garante que a elipse não passe dos limites laterais */
     overflow: hidden;
 }
 
-/* --- CLASSE DO NOVO FUNDO ELÍPTICO --- */
 .bg-elipse-footer {
     position: absolute;
     top: 0;
     left: -5%;
     width: 110%;
     height: 100%;
-     background: linear-gradient(83.73deg, #53BD7F 21.6%, #00783E 77.66%);
-     transform: matrix(-1, 0, 0, 1, 0, 0);
-;
+    background: linear-gradient(83.73deg, #53BD7F 21.6%, #00783E 77.66%);
+    transform: matrix(-1, 0, 0, 1, 0, 0);
 
     clip-path: ellipse(75% 100% at 50% 100%);
     z-index: 1;
@@ -1210,7 +1007,6 @@ nav {
 
     margin: 0 auto;
     padding: 0 30px;
-    /* Mantém o container sobre o background elíptico */
     position: relative;
     z-index: 2;
     display: flex;
@@ -1225,15 +1021,26 @@ nav {
     margin-bottom: 24px;
 }
 
-.footer-social-wrapper img {
+.footer-social-wrapper a {
+    color: #FFFFFF;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+
+.footer-social-wrapper svg {
     width: 20px;
-    height: auto;
+    height: 20px;
+    display: block;
     transition: transform 0.3s ease;
 }
 
-.footer-social-wrapper a:hover img {
-    transform: translateY(-3px);
+.footer-social-wrapper a:hover {
+    color: #BAFF87;
 }
+
+
 
 .footer-divider {
     width: 100%;
@@ -1279,28 +1086,45 @@ nav {
     display: flex;
     align-items: center;
     gap: 8px;
+    transition: color 0.3s ease;
 }
 
 .footer-links a span,
 .btn-voltar span {
     font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.footer-links a span svg,
+.btn-voltar span svg {
+    display: block;
 }
 
 .btn-voltar {
     font-weight: 500;
 }
 
-/* Responsividade de Mobile para a Curvatura do Footer */
-@media (max-width: 768px) {
-    .bg-elipse-footer {
-        /* No celular, suavizamos a curva para que os textos laterais não "caiam" fora da área de fundo colorida */
-        clip-path: ellipse(150% 100% at 50% 100%);
-    }
+.footer-links a:hover,
+.btn-voltar:hover {
+    color: #BAFF87;
 }
 
 /* ===============================
-   11. RESPONSIVIDADE (MEDIA QUERIES GERAIS)
+   12. RESPONSIVIDADE (MEDIA QUERIES)
 ================================= */
+@media (min-width: 992px) {
+    .secao-compostos .container {
+        max-width: 1300px;
+    }
+
+    .img-compostos {
+        width: 130%;
+        max-width: 920px;
+        margin-left: -15%;
+    }
+}
+
 @media (max-width: 1170px) {
     .hero-content {
         margin-left: 80px;
@@ -1316,7 +1140,61 @@ nav {
     }
 }
 
+@media (max-width: 992px) {
+    .circulo-metais .texto-circulo {
+        padding: 0 40px;
+        font-size: 14px;
+    }
+}
+
 @media (max-width: 990px) {
+    .secao-tratamento {
+        min-height: 835px;
+    }
+
+    .footer-principal {
+        height: auto;
+        padding: 28px 0 22px;
+    }
+
+    .footer-container {
+        height: auto;
+    }
+
+    .footer-bottom-row {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .footer-copyright {
+        flex-wrap: wrap;
+    }
+
+    .footer-nav {
+        width: 100%;
+        gap: 20px;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 22px;
+    }
+
+    .tratamento-header {
+        margin-left: 24px;
+    }
+
+    .fios-titulo {
+        text-align: center;
+    }
+
+    .img-composicao {
+        margin: 0 auto;
+    }
+
     .nav-links {
         display: none;
     }
@@ -1346,6 +1224,10 @@ nav {
 }
 
 @media (max-width: 768px) {
+    .bg-elipse-footer {
+        clip-path: ellipse(150% 100% at 50% 100%);
+    }
+
     .home-hero {
         min-height: 650px;
         background-position: 70% bottom;
@@ -1375,9 +1257,107 @@ nav {
         flex-direction: column;
         gap: 15px;
     }
+
+    .secao-compostos {
+        min-height: auto;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .bg-elipse-compostos {
+        width: 180%;
+        height: 100%;
+        left: 50%;
+        margin-left: -90%;
+        border-radius: 50%;
+    }
+
+    .img-compostos {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .titulo-compostos {
+        font-size: 38px;
+        line-height: 44px;
+        text-align: center;
+    }
+
+    .subtitulo-compostos {
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .texto-descricao-composto {
+        text-align: center;
+    }
+
+    .secao-metais-pesados {
+        margin-top: -80px;
+        margin-bottom: -80px;
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+
+    .secao-metais-pesados .row {
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    .secao-metais-pesados .row>.col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .circulo-metais {
+        margin-right: 0;
+        margin-top: 30px;
+    }
+
+    .texto-metais-container {
+        padding-left: 16px;
+    }
+
+    .texto-descritivo-metais {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 750px) {
+    .secao-tratamento {
+        min-height: 835px;
+    }
+
+    .tratamento-header {
+        margin-left: 12px;
+    }
+
+    #produtos-fios .row {
+        flex-direction: column;
+    }
+
+    #produtos-fios .fios-lista-container,
+    #produtos-fios .fios-lista-container.ms-lg-4 {
+        display: none !important;
+    }
+
+    .fios-imagem-container {
+        align-items: center;
+    }
 }
 
 @media (max-width: 480px) {
+    .tratamento-header {
+        margin-left: 4px;
+    }
+
+    .tratamento-conteudo {
+        gap: 34px;
+    }
+
     header {
         padding: 20px;
     }
@@ -1402,5 +1382,246 @@ nav {
         line-height: 28px;
         margin-top: 20px;
         margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 320px) {
+    body {
+        padding-bottom: 76px;
+    }
+
+    header {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 76px;
+        padding: 0 16px;
+        background-color: #005D30;
+        z-index: 1200;
+        opacity: 95%;
+    }
+
+    nav {
+        height: 100%;
+        justify-content: flex-start;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .menu-hamburguer {
+
+        width: auto;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .menu-hamburguer::after {
+        content: 'MENU';
+        color: #FFFFFF;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        line-height: 1;
+        text-transform: uppercase;
+    }
+
+    .chat-flutuante {
+
+        bottom: 25px;
+        right: 70px;
+        width: 66px;
+        height: 66px;
+        z-index: 1300;
+    }
+
+    .chat-modal {
+        bottom: 86px;
+        right: 10px;
+        width: 300px;
+    }
+
+    .menu-lateral {
+        display: none;
+        top: 0;
+        right: 0;
+        bottom: 76px;
+        left: 0;
+        width: 100%;
+        height: auto;
+        max-height: none;
+        padding: 20px 15px 10px 15px;
+        background-color: #00783E;
+        transform: none;
+        overflow-y: auto;
+        z-index: 1400;
+    }
+
+    .menu-lateral.ativo {
+        display: block;
+    }
+
+    .fechar-menu {
+        display: none;
+    }
+
+    .nav-links-mobile {
+        position: static;
+        margin-top: 0;
+        gap: 0;
+    }
+
+    .nav-links-mobile li a {
+        display: block;
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+
+    .nav-links-mobile li a::after {
+        bottom: -2px;
+    }
+
+    .nav-links-mobile-principal li a::after {
+        display: block;
+    }
+
+    .nav-links-mobile-principal {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        gap: 20px;
+    }
+
+
+    .menu-lateral-divider {
+        display: block;
+        position: static;
+        width: 100%;
+        height: 1px;
+        margin-top: 34px;
+        margin-bottom: 34px;
+        background-color: #FFFFFF;
+    }
+
+    .nav-links-mobile-secundario {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        gap: 20px;
+    }
+
+    .nav-links-mobile-secundario li a::after {
+        display: none;
+    }
+
+    body.menu-aberto .menu-hamburguer .menu {
+        display: none;
+    }
+
+    body.menu-aberto .menu-hamburguer::before {
+        content: '';
+        width: 40px;
+        height: 25px;
+        display: block;
+        background-image: url('../assets/ui/botao-fechar.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+
+    .tratamento-header {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .secao-metais-pesados {
+        margin-top: -60px;
+        margin-bottom: -60px;
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+
+    .secao-metais-pesados .row {
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+
+    .secao-metais-pesados .row>.col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .circulo-metais {
+        margin-top: 20px;
+        align-self: center;
+    }
+
+    .texto-metais-container {
+        padding-left: 0;
+        margin-top: 24px;
+    }
+
+    .footer-principal {
+        padding: 24px 0 24px;
+    }
+
+    .footer-container {
+        padding: 0 16px;
+    }
+
+    .footer-social-wrapper {
+        gap: 26px;
+        margin-bottom: 18px;
+    }
+
+    .footer-bottom-row {
+        gap: 16px;
+    }
+
+    .footer-copyright {
+        display: block;
+        font-size: 15px;
+        line-height: 1.45;
+    }
+
+    .logo-oxigen {
+        margin-left: 6px;
+        vertical-align: baseline;
+    }
+
+    .footer-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .tratamento-conteudo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .texto-circulo {
+        text-align: center;
+    }
+
+    .bloco-texto p {
+        text-align: center;
     }
 }
