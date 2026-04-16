@@ -110,8 +110,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 prevEl: '.swiper-btn-prev',
             },
             breakpoints: {
-                320: {
+                0: {
                     spaceBetween: 20
+                },
+                576: {
+                    spaceBetween: 24
                 },
                 768: {
                     spaceBetween: 30

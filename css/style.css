@@ -178,6 +178,11 @@ nav {
     gap: 11px;
 }
 
+.scroll-down-link p {
+    margin: 0;
+}
+
+/* Remove default margin from <p> */
 .scroll-down-link:hover {
     color: rgba(186, 255, 135, 1);
 }
@@ -390,6 +395,7 @@ nav {
 .secao-renovavel {
     width: 100%;
     margin-top: -50px;
+    padding-top: 211px;
     background-color: #FFFFFF;
     position: relative;
     z-index: 2;
@@ -402,7 +408,7 @@ nav {
     left: -5%;
     bottom: 0;
     width: 110%;
-    height: 150px;
+    height: 10px;
     background-image: url('../assets/backgrounds/global/fundo-pagina.svg');
     background-repeat: repeat;
     clip-path: ellipse(70% 100% at 50% 100%);
@@ -414,7 +420,6 @@ nav {
     position: relative;
     z-index: 2;
 }
-
 
 
 .titulo-ekko {
@@ -455,6 +460,7 @@ nav {
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
+
 }
 
 .fios-bloco-circulo {
@@ -672,8 +678,6 @@ nav {
 
 
 
-
-
 .secao-compostos .container {
     padding-top: 56px;
     padding-bottom: 56px;
@@ -725,6 +729,7 @@ nav {
     font-size: 24px;
     line-height: 34px;
     letter-spacing: 0.5px;
+    text-align: right;
 }
 
 .circulo-metais {
@@ -1112,280 +1117,17 @@ nav {
 
 /* ===============================
    12. RESPONSIVIDADE (MEDIA QUERIES)
+   Bootstrap 5 Breakpoints (mobile-first):
+   xs: < 576px (base styles)
+   sm: >= 576px
+   md: >= 768px
+   lg: >= 992px
+   xl: >= 1200px
+   xxl: >= 1400px
 ================================= */
-@media (min-width: 992px) {
-    .secao-compostos .container {
-        max-width: 1300px;
-    }
 
-    .img-compostos {
-        width: 130%;
-        max-width: 920px;
-        margin-left: -15%;
-    }
-}
-
-@media (max-width: 1170px) {
-    .hero-content {
-        margin-left: 80px;
-    }
-
-    .hero-logo-gigante img {
-        width: 400px;
-    }
-
-    .hero-descricao {
-        font-size: 32px;
-        max-width: 560px;
-    }
-}
-
-@media (max-width: 992px) {
-    .circulo-metais .texto-circulo {
-        padding: 0 40px;
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 990px) {
-    .secao-tratamento {
-        min-height: 835px;
-    }
-
-    .footer-principal {
-        height: auto;
-        padding: 28px 0 22px;
-    }
-
-    .footer-container {
-        height: auto;
-    }
-
-    .footer-bottom-row {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .footer-copyright {
-        flex-wrap: wrap;
-    }
-
-    .footer-nav {
-        width: 100%;
-        gap: 20px;
-    }
-
-    .footer-links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 22px;
-    }
-
-    .tratamento-header {
-        margin-left: 24px;
-    }
-
-    .fios-titulo {
-        text-align: center;
-    }
-
-    .img-composicao {
-        margin: 0 auto;
-    }
-
-    .nav-links {
-        display: none;
-    }
-
-    header {
-        padding: 30px 40px;
-    }
-
-    .home-hero {
-        min-height: 700px;
-        background-position: 65% center;
-    }
-
-    .hero-content {
-        margin-left: 60px;
-    }
-
-    .hero-logo-gigante img {
-        width: 350px;
-    }
-
-    .hero-descricao {
-        font-size: 28px;
-        line-height: 38px;
-        max-width: 480px;
-    }
-}
-
-@media (max-width: 768px) {
-    .bg-elipse-footer {
-        clip-path: ellipse(150% 100% at 50% 100%);
-    }
-
-    .home-hero {
-        min-height: 650px;
-        background-position: 70% bottom;
-    }
-
-    .hero-content {
-        margin-left: 40px;
-    }
-
-    .hero-logo-gigante img {
-        width: 300px;
-    }
-
-    .hero-descricao {
-        font-size: 24px;
-        line-height: 34px;
-        max-width: 400px;
-    }
-
-    .titulo-reducao {
-        font-size: 24px;
-        line-height: normal;
-    }
-
-    .impacto-card {
-        padding: 30px 20px;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .secao-compostos {
-        min-height: auto;
-        margin-top: 40px;
-        margin-bottom: 40px;
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
-
-    .bg-elipse-compostos {
-        width: 180%;
-        height: 100%;
-        left: 50%;
-        margin-left: -90%;
-        border-radius: 50%;
-    }
-
-    .img-compostos {
-        width: 100%;
-        margin-left: 0;
-    }
-
-    .titulo-compostos {
-        font-size: 38px;
-        line-height: 44px;
-        text-align: center;
-    }
-
-    .subtitulo-compostos {
-        font-size: 18px;
-        text-align: center;
-        margin-bottom: 30px;
-    }
-
-    .texto-descricao-composto {
-        text-align: center;
-    }
-
-    .secao-metais-pesados {
-        margin-top: -80px;
-        margin-bottom: -80px;
-        padding-top: 150px;
-        padding-bottom: 150px;
-    }
-
-    .secao-metais-pesados .row {
-        flex-wrap: nowrap;
-        align-items: center;
-    }
-
-    .secao-metais-pesados .row>.col-md-6 {
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
-
-    .circulo-metais {
-        margin-right: 0;
-        margin-top: 30px;
-    }
-
-    .texto-metais-container {
-        padding-left: 16px;
-    }
-
-    .texto-descritivo-metais {
-        margin-right: 0;
-    }
-}
-
-@media (max-width: 750px) {
-    .secao-tratamento {
-        min-height: 835px;
-    }
-
-    .tratamento-header {
-        margin-left: 12px;
-    }
-
-    #produtos-fios .row {
-        flex-direction: column;
-    }
-
-    #produtos-fios .fios-lista-container,
-    #produtos-fios .fios-lista-container.ms-lg-4 {
-        display: none !important;
-    }
-
-    .fios-imagem-container {
-        align-items: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .tratamento-header {
-        margin-left: 4px;
-    }
-
-    .tratamento-conteudo {
-        gap: 34px;
-    }
-
-    header {
-        padding: 20px;
-    }
-
-    .home-hero {
-        min-height: 100vh;
-        background-position: 75% bottom;
-    }
-
-    .hero-content {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-
-    .hero-logo-gigante img {
-        width: 100%;
-        max-width: 280px;
-    }
-
-    .hero-descricao {
-        font-size: 20px;
-        line-height: 28px;
-        margin-top: 20px;
-        margin-bottom: 25px;
-    }
-}
-
-@media (max-width: 320px) {
+/* --- xs: < 576px (base mobile) --- */
+@media (max-width: 575.98px) {
     body {
         padding-bottom: 76px;
     }
@@ -1412,8 +1154,11 @@ nav {
         display: none;
     }
 
-    .menu-hamburguer {
+    .nav-links {
+        display: none;
+    }
 
+    .menu-hamburguer {
         width: auto;
         height: auto;
         display: flex;
@@ -1432,8 +1177,178 @@ nav {
         text-transform: uppercase;
     }
 
-    .chat-flutuante {
+    .home-hero {
+        min-height: 100vh;
+        background-position: 75% bottom;
+    }
 
+    .hero-content {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .hero-logo-gigante img {
+        width: 246px;
+        height: 66px;
+    }
+
+    .hero-descricao {
+        font-size: 24px;
+        line-height: 28px;
+        margin-top: 20px;
+        margin-bottom: 25px;
+    }
+
+    .titulo-reducao {
+        font-size: 24px;
+        line-height: normal;
+    }
+
+    .impacto-card {
+        padding: 30px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .secao-tratamento {
+        padding-top: 60px;
+        padding-bottom: 180px;
+        padding-left: 20px;
+        padding-right: 20px;
+
+
+    }
+
+    .tratamento-container {
+        align-items: flex-start;
+    }
+
+    .tratamento-header {
+        margin-left: 0;
+        text-align: left;
+    }
+
+    .subtitulo-sistema {
+        font-size: 24px;
+    }
+
+    .tratamento-conteudo {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+
+    .bloco-texto {
+        max-width: 100%;
+    }
+
+    .bloco-texto p {
+        margin-top: 0;
+        text-align: left;
+        font-size: 16px;
+        line-height: 23px;
+    }
+
+    #produtos-fios .row {
+        flex-direction: column;
+    }
+
+    #produtos-fios .fios-lista-container,
+    #produtos-fios .fios-lista-container.ms-lg-4 {
+        display: none;
+    }
+
+    .fios-imagem-container {
+        align-items: center;
+    }
+
+    .secao-compostos {
+        min-height: auto;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        justify-content: center;
+    }
+
+    .bg-elipse-compostos {
+        position: absolute;
+        top: 0;
+        width: 180%;
+        height: 100%;
+        left: 50%;
+        margin-left: -90%;
+        border-radius: 50%;
+    }
+
+    .img-compostos {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .secao-compostos .row>.col-md-6:first-child {
+        order: 2;
+    }
+
+    .secao-compostos .row>.col-md-6:last-child {
+        order: 1;
+    }
+
+    .titulo-compostos {
+        font-size: 38px;
+        line-height: 44px;
+        text-align: left;
+    }
+
+    .subtitulo-compostos {
+        font-size: 18px;
+        text-align: left;
+        margin-bottom: 30px;
+    }
+
+    .texto-descricao-composto {
+        text-align: left;
+    }
+
+    .compostos-texto-container {
+        padding-left: 0;
+    }
+
+    .secao-metais-pesados {
+        margin-top: -80px;
+        margin-bottom: -60px;
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .titulo-metais {
+        text-align: center;
+    }
+
+    .secao-metais-pesados .col-12 {
+        align-items: center;
+    }
+
+    .circulo-metais {
+        margin-top: 20px;
+        align-self: center;
+    }
+
+    .circulo-metais .texto-circulo {
+        padding: 0 40px;
+        font-size: 14px;
+    }
+
+    .texto-metais-container {
+        padding-left: 0;
+        margin-top: 24px;
+    }
+
+    .texto-descritivo-metais {
+        margin-right: 0;
+    }
+
+    .chat-flutuante {
         bottom: 25px;
         right: 70px;
         width: 66px;
@@ -1499,7 +1414,6 @@ nav {
         gap: 20px;
     }
 
-
     .menu-lateral-divider {
         display: block;
         position: static;
@@ -1537,39 +1451,6 @@ nav {
         background-position: center;
     }
 
-    .tratamento-header {
-        margin-left: 0;
-        text-align: center;
-    }
-
-    .secao-metais-pesados {
-        margin-top: -60px;
-        margin-bottom: -60px;
-        padding-top: 120px;
-        padding-bottom: 120px;
-    }
-
-    .secao-metais-pesados .row {
-        flex-direction: column;
-        flex-wrap: wrap;
-        align-items: stretch;
-    }
-
-    .secao-metais-pesados .row>.col-md-6 {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-
-    .circulo-metais {
-        margin-top: 20px;
-        align-self: center;
-    }
-
-    .texto-metais-container {
-        padding-left: 0;
-        margin-top: 24px;
-    }
-
     .footer-principal {
         padding: 24px 0 24px;
     }
@@ -1584,6 +1465,8 @@ nav {
     }
 
     .footer-bottom-row {
+        flex-direction: column;
+        align-items: flex-start;
         gap: 16px;
     }
 
@@ -1610,18 +1493,425 @@ nav {
         gap: 8px;
     }
 
-    .tratamento-conteudo {
+    .bg-elipse-footer {
+        clip-path: ellipse(150% 100% at 50% 100%);
+    }
+}
+
+/* --- sm: >= 576px --- */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    header {
+        padding: 20px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .home-hero {
+        min-height: 650px;
+        background-position: 70% bottom;
+    }
+
+    .hero-content {
+        margin-left: 40px;
+    }
+
+    .hero-logo-gigante img {
+        width: 300px;
+    }
+
+    .hero-descricao {
+        font-size: 24px;
+        line-height: 34px;
+        max-width: 400px;
+    }
+
+    .titulo-reducao {
+        font-size: 24px;
+        line-height: normal;
+    }
+
+    .impacto-card {
+        padding: 30px 20px;
         flex-direction: column;
+        gap: 15px;
+    }
+
+    .secao-tratamento {
+        padding-top: 80px;
+        padding-bottom: 200px;
+        padding-left: 30px;
+        padding-right: 30px;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .tratamento-container {
+        align-items: flex-start;
+    }
+
+    .tratamento-header {
+        margin-left: 0;
+
+        text-align: left;
+    }
+
+    .subtitulo-sistema {
+        font-size: 28px;
+    }
+
+    .tratamento-conteudo {
+        gap: 30px;
+        margin-top: 50px;
+    }
+
+
+
+    .bloco-texto p {
+        margin-top: 0;
+        font-size: 16px;
+        line-height: 23px;
+    }
+
+    #produtos-fios .row {
+        flex-direction: column;
+    }
+
+    #produtos-fios .fios-lista-container,
+    #produtos-fios .fios-lista-container.ms-lg-4 {
+        display: none;
+    }
+
+    .fios-imagem-container {
         align-items: center;
-        text-align: center;
+    }
+
+    .secao-compostos {
+        min-height: auto;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        justify-content: center;
+    }
+
+    .bg-elipse-compostos {
+        position: absolute;
+        top: 0;
+        width: 180%;
+        height: 100%;
+        left: 50%;
+        margin-left: -90%;
+        border-radius: 50%;
+    }
+
+    .img-compostos {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .secao-compostos .row>.col-md-6:first-child {
+        order: 2;
+    }
+
+    .secao-compostos .row>.col-md-6:last-child {
+        order: 1;
+    }
+
+    .titulo-compostos {
+        font-size: 38px;
+        line-height: 44px;
+        text-align: left;
+    }
+
+    .subtitulo-compostos {
+        font-size: 18px;
+        text-align: left;
+        margin-bottom: 30px;
+    }
+
+    .texto-descricao-composto {
+        text-align: left;
+    }
+
+    .compostos-texto-container {
+        padding-left: 0;
+    }
+
+    .secao-metais-pesados {
+        margin-top: -80px;
+        margin-bottom: -80px;
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+
+    .circulo-metais {
+        margin-right: 0;
+    }
+
+    .circulo-metais .texto-circulo {
+        padding: 0 40px;
+        font-size: 14px;
+    }
+
+    .texto-descritivo-metais {
+        margin-right: 0;
+    }
+
+    .footer-principal {
+        height: auto;
+        padding: 28px 0 22px;
+    }
+
+    .footer-container {
+        height: auto;
+    }
+
+    .footer-bottom-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .footer-copyright {
+        flex-wrap: wrap;
+    }
+
+    .footer-nav {
+        width: 100%;
         gap: 20px;
     }
 
-    .texto-circulo {
+    .footer-links {
+        flex-wrap: wrap;
+        gap: 22px;
+    }
+
+    .bg-elipse-footer {
+        clip-path: ellipse(150% 100% at 50% 100%);
+    }
+}
+
+/* --- md: >= 768px --- */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    header {
+        padding: 30px 40px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .home-hero {
+        min-height: 650px;
+        background-position: 70% bottom;
+    }
+
+    .hero-content {
+        margin-left: 40px;
+    }
+
+    .hero-logo-gigante img {
+        width: 300px;
+    }
+
+    .hero-descricao {
+        font-size: 24px;
+        line-height: 34px;
+        max-width: 400px;
+    }
+
+    .titulo-reducao {
+        font-size: 24px;
+        line-height: normal;
+    }
+
+    .impacto-card {
+        padding: 30px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .secao-tratamento {
+        padding-top: 100px;
+        padding-bottom: 200px;
+
+
+    }
+
+
+    .tratamento-header {
+        margin-left: 0;
+
+        text-align: left;
+    }
+
+    .tratamento-conteudo {
+        gap: 40px;
+    }
+
+
+    .bloco-texto p {
+        margin-top: 0;
+    }
+
+    .fios-titulo {
         text-align: center;
     }
 
-    .bloco-texto p {
+    .img-composicao {
+        margin: 0 auto;
+    }
+
+    .secao-compostos {
+        min-height: auto;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        justify-content: center;
+    }
+
+    .bg-elipse-compostos {
+        position: absolute;
+        top: 0;
+        width: 180%;
+        height: 100%;
+        left: 50%;
+        margin-left: -90%;
+        border-radius: 50%;
+    }
+
+    .img-compostos {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .titulo-compostos {
+        font-size: 38px;
+        line-height: 44px;
+        text-align: left;
+    }
+
+    .subtitulo-compostos {
+        font-size: 18px;
+        text-align: left;
+        margin-bottom: 30px;
+    }
+
+    .texto-descricao-composto {
+        text-align: left;
+    }
+
+    .secao-metais-pesados {
+        margin-top: -80px;
+        margin-bottom: -80px;
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+
+    .circulo-metais {
+        margin-right: 0;
+        margin-top: 30px;
+    }
+
+    .circulo-metais .texto-circulo {
+        padding: 0 40px;
+        font-size: 14px;
+    }
+
+    .texto-descritivo-metais {
+        margin-right: 0;
+    }
+
+    .footer-principal {
+        height: auto;
+        padding: 28px 0 22px;
+    }
+
+    .footer-container {
+        height: auto;
+    }
+
+    .footer-bottom-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .footer-copyright {
+        flex-wrap: wrap;
+    }
+
+    .footer-nav {
+        width: 100%;
+        gap: 20px;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        gap: 22px;
+    }
+
+    .bg-elipse-footer {
+        clip-path: ellipse(150% 100% at 50% 100%);
+    }
+}
+
+/* --- lg: >= 992px --- */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .hero-content {
+        margin-left: 60px;
+    }
+
+    .hero-logo-gigante img {
+        width: 350px;
+    }
+
+    .hero-descricao {
+        font-size: 28px;
+        line-height: 38px;
+        max-width: 480px;
+    }
+
+    .home-hero {
+        min-height: 700px;
+        background-position: 65% center;
+    }
+
+    .secao-compostos .container {
+        max-width: 1300px;
+    }
+
+    .img-compostos {
+        width: 130%;
+        max-width: 920px;
+        margin-left: -15%;
+    }
+
+    .fios-titulo {
         text-align: center;
+    }
+
+    .img-composicao {
+        margin: 0 auto;
+    }
+
+    .tratamento-header {
+        margin-left: 24px;
+    }
+}
+
+/* --- xl: >= 1200px --- */
+@media (min-width: 1200px) {
+    .secao-compostos .container {
+        max-width: 1300px;
+    }
+
+    .img-compostos {
+        width: 130%;
+        max-width: 920px;
+        margin-left: -15%;
     }
 }
